@@ -28,6 +28,6 @@
     "css": "postcss -c postcss.config.json",
     "minify": "postcss -u cssnano www/css/base.css -o www/css/base.min.css",
     "start": "postcss -c postcss.config.json -w",
-    "deploy": "git subtree push --prefix app origin gh-pages"
+    "deploy": "git subtree push --prefix www origin gh-pages"
   }
 }
