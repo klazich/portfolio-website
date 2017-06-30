@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "basscss": "^8.0.0",
+    "basscss-addons": "^1.0.0-beta4",
+    "basscss-basic": "^1.0.0",
+    "basscss-responsive-typography": "^1.0.1",
+    "basscss-utility-headings": "^0.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.1",
+    "cssnano": "^3.4.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "postcss": "^5.0.14",
+    "postcss-calc": "^5.2.0",
+    "postcss-cli": "^2.4.0",
+    "postcss-color-function": "^2.0.0",
+    "postcss-custom-media": "^5.0.0",
+    "postcss-custom-properties": "^5.0.0",
+    "postcss-discard-comments": "^2.0.3",
+    "postcss-font-magician": "^2.0.0",
+    "postcss-import": "^8.0.2"
+  },
+  "scripts": {
+    "css": "postcss -c postcss.config.json",
+    "minify": "postcss -u cssnano www/css/base.css -o www/css/base.min.css",
+    "start": "postcss -c postcss.config.json -w",
+    "deploy": "git subtree push --prefix app origin gh-pages"
+  }
+}
