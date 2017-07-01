@@ -52,6 +52,9 @@
 @import 'basscss-addons/modules/background-images';
 
 
+/* Personal Extensions */
+@import 'extend.css';
+
 
 /* Custom media queries */
 /*

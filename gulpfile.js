@@ -9,7 +9,7 @@ gulp.task('clean', function () {
 })
 
 gulp.task('css', ['clean'], function () {
-    return gulp.src('css/*.css')
+    return gulp.src('css/base.css')
         .pipe(postcss([
             require('postcss-import'),
             require('postcss-font-magician'),
@@ -17,7 +17,6 @@ gulp.task('css', ['clean'], function () {
             require('postcss-custom-properties'),
             require('postcss-calc'),
             require('postcss-color-function'),
-            //require('postcss-discard-comments'),
             require('autoprefixer'),
         ]))
         .pipe(gulp.dest('www/css'))
