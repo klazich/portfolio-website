@@ -1,0 +1,38 @@
+/* Extensions */
+
+/* Notes
+   #d88 <-- a nice red
+ */
+
+body {
+    font-family: "Roboto Mono", serif !important;
+    font-weight: 400;
+    color: #222;
+}
+
+header {
+    background: url("https://klazich.github.io/portfolio-website/images/michal-grosicki-235026.jpg");
+    filter: drop-shadow(0 0 5px);
+}
+
+.un-a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.headerContent {
+    filter: drop-shadow(-1px 1px 0.6px slategrey) blur(0px) opacity(100%);
+}
+
+.caps-r {
+    text-transform: uppercase;
+}
+
+header h1 {
+    font-weight: 900;
+}
+
+.logo {
+    fill: currentColor;
+}
+
