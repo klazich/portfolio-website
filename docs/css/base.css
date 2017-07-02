@@ -944,8 +944,10 @@ hr {
 
 body {
     font-family: "Roboto Mono", serif !important;
+    /*
     font-weight: 400;
     color: #222;
+    */
 }
 
 header {
