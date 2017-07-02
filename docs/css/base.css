@@ -951,7 +951,7 @@ body {
 }
 
 header {
-    background: url("https://klazich.github.io/portfolio-website/images/michal-grosicki-235026.jpg");
+    background: url("../images/michal-grosicki-235026.jpg");
     filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="5" /><feOffset dx="1" dy="1" result="offsetblur" /><feFlood flood-color="rgba(0,0,0,1)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter');
     -webkit-filter: drop-shadow(0 0 5px);
             filter: drop-shadow(0 0 5px);
