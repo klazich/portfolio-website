@@ -1,4 +1,46 @@
 @font-face {
+  font-family: serif;
+  font-style: italic;
+  font-weight: 300;
+  src: local(Georgia),local("Times New Roman"),local(Times);
+}
+
+@font-face {
+  font-family: serif;
+  font-style: italic;
+  font-weight: 400;
+  src: local(Georgia),local("Times New Roman"),local(Times);
+}
+
+@font-face {
+  font-family: serif;
+  font-style: italic;
+  font-weight: 700;
+  src: local(Georgia),local("Times New Roman"),local(Times);
+}
+
+@font-face {
+  font-family: serif;
+  font-style: normal;
+  font-weight: 300;
+  src: local(Georgia),local("Times New Roman"),local(Times);
+}
+
+@font-face {
+  font-family: serif;
+  font-style: normal;
+  font-weight: 400;
+  src: local(Georgia),local("Times New Roman"),local(Times);
+}
+
+@font-face {
+  font-family: serif;
+  font-style: normal;
+  font-weight: 700;
+  src: local(Georgia),local("Times New Roman"),local(Times);
+}
+
+@font-face {
   font-family: "Roboto Mono";
   font-style: italic;
   font-weight: 100;

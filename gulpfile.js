@@ -5,12 +5,12 @@ let sourcemap = require('gulp-sourcemaps')
 let del = require('del')
 
 gulp.task('clean', function () {
-    return del(['www/css/**/*', 'www/index.html'])
+    return del(['docs/css/**/*', 'docs/index.html'])
 })
 
 gulp.task('html', function () {
     return gulp.src('src/index.html')
-        .pipe(gulp.dest('www/'))
+        .pipe(gulp.dest('docs/'))
 })
 
 gulp.task('css', ['clean'], function () {
@@ -30,16 +30,16 @@ gulp.task('css', ['clean'], function () {
             require('postcss-reporter')
 
         ]))
-        .pipe(gulp.dest('www/css'))
+        .pipe(gulp.dest('docs/css'))
 })
 
 gulp.task('minify', ['css'], function () {
-    return gulp.src(['www/css/*.css'])
+    return gulp.src(['docs/css/*.css'])
         .pipe(sourcemap.init())
         .pipe(rename({ suffix: '.min' }))
         .pipe(postcss([require('cssnano')({autoprefixer: false})]))
         .pipe(sourcemap.write('.'))
-        .pipe(gulp.dest('www/css'))
+        .pipe(gulp.dest('docs/css'))
 })
 
 gulp.task('default', ['minify', 'html'])

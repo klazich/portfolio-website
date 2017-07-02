@@ -7,17 +7,14 @@
     "basscss-utility-headings": "^0.1.0"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.1",
     "css-mqpacker": "^6.0.1",
     "cssnano": "^3.4.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-html-postcss": "^6.0.1",
     "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.0",
     "postcss": "^5.0.14",
-    "postcss-assets": "^4.1.0",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-calc": "^5.2.0",
     "postcss-cli": "^2.4.0",
@@ -30,11 +27,5 @@
     "postcss-import": "^8.0.2",
     "postcss-reporter": "^4.0.0",
     "postcss-url": "^7.0.0"
-  },
-  "scripts": {
-    "css": "postcss -c postcss.config.json",
-    "minify": "postcss -u cssnano www/css/base.css -o www/css/base.min.css",
-    "start": "postcss -c postcss.config.json -w",
-    "deploy": "git subtree push --prefix www origin gh-pages"
   }
 }
