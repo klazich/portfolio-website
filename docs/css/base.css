@@ -908,9 +908,25 @@ hr {
 
 .border-maroon  { border-color: #85144B }
 
-/* @import 'basscss-addons/modules/darken'; */
+/* Basscss Darken */
 
-/* @import 'basscss-addons/modules/lighten'; */
+.bg-darken-1 { background-color: rgba(0, 0, 0, .0625) }
+
+.bg-darken-2 { background-color: rgba(0, 0, 0, .125) }
+
+.bg-darken-3 { background-color: rgba(0, 0, 0, .25) }
+
+.bg-darken-4 { background-color: rgba(0, 0, 0, .5) }
+
+/* Basscss Lighten */
+
+.bg-lighten-1 { background-color: rgba(255, 255, 255, .0625) }
+
+.bg-lighten-2 { background-color: rgba(255, 255, 255, .125) }
+
+.bg-lighten-3 { background-color: rgba(255, 255, 255, .25) }
+
+.bg-lighten-4 { background-color: rgba(255, 255, 255, .5) }
 
 /* Basscss Background Images */
 
@@ -958,7 +974,6 @@ header {
 }
 
 .un-a {
-    color: inherit;
     text-decoration: inherit;
 }
 
