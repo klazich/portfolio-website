@@ -8,18 +8,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111">
   <link rel="stylesheet" href="css/base.min.css">
-  <link rel="icon" type="image/png" href="../docs/images/favicon.png">
+  <link rel="icon" type="img/png" href="../docs/img/favicon.png">
   <script async src="https://use.fontawesome.com/33a7b75d21.js"></script>
 </head>
 <body>
 
-
   <header class="py4 bg-cover bg-center">
-    <div class="container max-width-4 mx-auto">
-      <section id="header" class="center headerContent container px2 py3">
 
-        <svg class="logo"
-             height="6em"
+      <section id="header" class="center container px2">
+
+        <svg class="logo mt2"
+
+             height="7em"
              viewBox="0 0 300 200"
              xmlns="http://www.w3.org/2000/svg"
              fill-rule="evenodd"
@@ -29,66 +29,93 @@
           <path d="M300 195h-89v-43l89 43zm-198 5L0 150.8V0l102 49.2V200zm103 0l-98-48.5 24-23 74 71.5zm.7-6.4l-71-68.6 71-68.7v137.3zM104.2 0L206 49l-99 95.4V45.7l-33.7-16 31-29.7z"></path>
         </svg>
 
-        <h1 class="h0 h0-responsive line-height-1 caps bold">Kevin Lazich</h1>
+        <h1 class="h00 h00-responsive my3 caps bold">Kevin Lazich</h1>
 
-        <p class="h5 line-height-4 caps">
-          <span class="md-pt1 lg-pt2 nowrap">Programming Hobbyist</span><br>
-          <span class="md-pt1 lg-pt2 nowrap">Aspiring Developer</span><br>
-          <span class="md-pt1 lg-pt2 nowrap">Can count past ten</span>
+        <p class="h5 caps bold">
+          <span class="nowrap">Programming Hobbyist</span><br> <span class="nowrap">Aspiring Developer</span><br> <span
+          class="nowrap">Can count past ten</span>
         </p>
 
-        <p class="h5 mt4 black">
-          <a href="https://github.com/klazich" rel="noopener" target="_blank" class="black mr3"><i class="fa fa-github fa-lg"
-                                                                               aria-hidden="true"></i></a>
-          <a href="https://twitter.com/TheKlazich" rel="noopener" target="_blank" class="black mr3"><i class="fa fa-twitter fa-lg"
-                                                                                   aria-hidden="true"></i></a>
-          <a href="https://www.facebook.com/kevin.lazich" rel="noopener" target="_blank" class="black"><i class="fa fa-facebook fa-lg"
-                                                                                   aria-hidden="true"></i></a>
+        <p class="h5 mt3 black">
+          <a href="https://github.com/klazich"
+             rel="noopener"
+             target="_blank"
+             class="black mr3"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/TheKlazich"
+             rel="noopener"
+             target="_blank"
+             class="black mr3"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/kevin.lazich"
+             rel="noopener"
+             target="_blank"
+             class="black"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
         </p>
 
       </section>
-    </div>
+
   </header>
 
   <div class="container max-width-4 mx-auto">
 
     <section id="works" class="container px2 py3">
-      <h1 class="mt0">
-        <a href="#works" class="caps white bg-gray un-a"> Featured Works </a>
+
+      <h1 class="h1 h1-responsive center sm-left-align">
+        <a href="#works" class="h1 h1-responsive caps black text-decoration-none"> Featured Works </a>
       </h1>
+
       <div class="clearfix mxn2">
 
-        <article class="sm-col sm-col-4 px2">
-          <h2 class="h3 mb0 caps-r"> class-movie </h2>
-          <p>Lorem ipsum dolor sit amet, mea graece everti albucius ei, quod oportere intellegam at sit, ne sit ponderum abhorreant. Ex nemore eruditi vix, ad pro magna saperet.</p>
+        <article class="sm-col sm-col-6 px2">
+          <h2 class="h3 bg-1 p2 caps-r black rounded">class-movie</h2>
+          <div class="px2">
+            <p>Generate HTML for a movie review website using a simple and flexible Python class to handle movie data and place API request tailored for movie data retrieval.</p>
+            <h6 class="italic">#Python</h6>
+          </div>
         </article>
-        <article class="sm-col sm-col-4 px2">
-          <h2 class="h3 mb0 caps-r">This very website</h2>
-          <p>Lorem ipsum dolor sit amet, mea graece everti albucius ei, quod oportere intellegam at sit, ne sit ponderum abhorreant. Ex nemore eruditi vix, ad pro magna saperet.</p>
-        </article>
-        <article class="sm-col sm-col-4 px2">
-          <h2 class="h3 mb0 caps-r">Future Project #1</h2>
-          <p>Lorem ipsum dolor sit amet, mea graece everti albucius ei, quod oportere intellegam at sit, ne sit ponderum abhorreant. Ex nemore eruditi vix, ad pro magna saperet.</p>
+
+        <article class="sm-col sm-col-6 px2">
+          <h2 class="h3 bg-2 p2 caps-r white rounded">This Website</h2>
+          <div class="px2">
+            <p>Lorem ipsum dolor sit amet, mea graece everti albucius ei, quod oportere intellegam at sit.</p>
+            <h6 class="italic">#HTML #CSS #PostCSS #Javascript</h6>
+          </div>
         </article>
 
       </div>
+
+      <div class="clearfix mxn2">
+
+        <article class="sm-col sm-col-6 px2">
+          <h2 class="h3 bg-3 p2 caps-r black rounded">Future Project #1</h2>
+          <div class="px2">
+            <p>This one doesn't exist yet. </p>
+            <p>So, it is passing all tests with %100 code coverage...</p>
+          </div>
+        </article>
+
+      </div>
+
     </section>
 
     <section id="contributions" class="container px2 py3">
-      <h1 class="mt0">
-        <a href="#contributions" class="caps white bg-gray un-a"> Contributions </a>
+      <h1 class="h1 h1-responsive center sm-left-align">
+        <a href="#contributions" class="caps black text-decoration-none"> Contributions </a>
       </h1>
       <div class="clearfix mxn2">
         <article class="sm-col sm-col-4 px2">
           <h2 class="h3 mb0 caps-r">Hoodie</h2>
+          <h3 class="h4">
+            <a href="https://github.com/hoodiehq/hoodie/pull/592" rel="noopener" target="_blank">PR #592</a>
+          </h3>
           <p>Info on open source contribution to Hoodie project.</p>
+          <h6 class="italic">#nodejs #npm-script</h6>
         </article>
       </div>
     </section>
 
     <section id="blog" class="container px2 py3">
-      <h1 class="mt0">
-        <a href="#blog" class="caps white bg-gray un-a"> Blog </a>
+      <h1 class="h1 h1-responsive center sm-left-align">
+        <a href="#blog" class="caps black text-decoration-none"> Blog </a>
       </h1>
       <div class="clearfix mxn2">
         <div class="sm-col sm-col-8 md-col-9 px2">
@@ -129,9 +156,8 @@
         <div class="sm-col sm-col-6">
 
           <div class="p2">
-            <p class="h6">2017 KEVIN LAZICH <a href=""
-                                              rel="noopener"
-                                              class="caps regular ml1">dev@kevinlazich.com</a></p>
+            <p class="h6">2017 KEVIN LAZICH <a href="" rel="noopener" class="caps regular ml1">dev@kevinlazich.com</a>
+            </p>
           </div>
         </div>
 

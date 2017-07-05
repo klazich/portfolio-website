@@ -11,25 +11,38 @@ body {
     color: #222;
     */
 }
+
 header {
-    background: url("../images/michal-grosicki-235026.jpg");
+    background: url("../img/michal-grosicki-235026.jpg");
     filter: drop-shadow(0 0 5px);
 }
 
-.un-a {
-    text-decoration: inherit;
-}
-
-.headerContent {
+header section {
     filter: drop-shadow(-1px 1px 0.6px slategrey) blur(0px) opacity(100%);
-}
-
-.caps-r {
-    text-transform: uppercase;
 }
 
 header h1 {
     font-weight: 900;
+}
+
+.bg-1 {
+    background: url("../img/bg-movie-shot-crop.png");
+    background-position: 50%;
+    background-size: cover;
+}
+.bg-2 {
+    background: url("../img/bg-portfolio-shot-crop.png");
+    background-position: 50%;
+    background-size: cover;
+}.bg-3 {
+    background: url("../img/bg-future.png");
+    background-position: 50%;
+    background-size: cover;
+}
+
+.caps-r {
+    /* like BassCSS 'caps' but regular letter spacing*/
+    text-transform: uppercase;
 }
 
 .logo {
