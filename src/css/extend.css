@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    background: url("../img/michal-grosicki-235026.jpg");
+    background: inline("../img/michal-grosicki-235026.jpg");
     filter: drop-shadow(0 0 5px);
 }
 
