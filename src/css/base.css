@@ -50,10 +50,6 @@
 @import 'basscss-addons/modules/background-images';
 
 
-/* Personal Extensions */
-@import 'extend.pcss';
-
-
 /* Custom media queries */
 /*
 @custom-media --breakpoint-sm (min-width: 40em);

@@ -1,0 +1,56 @@
+@import "base.css";
+
+/* Extensions */
+
+/* Notes
+   #d88 <-- a nice red
+ */
+
+body {
+    font-family: "Roboto Mono", serif !important;
+}
+
+header {
+    background: url("img/webp/bg.webp");
+    filter: drop-shadow(0 0 5px);
+}
+
+header section {
+    filter: drop-shadow(-1px 1px 0.6px slategrey) blur(0px) opacity(100%);
+}
+
+header h1 {
+    font-weight: 900;
+}
+
+article p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.bg-1 {
+    background: url("img/webp/bg-movie-shot-crop.webp");
+    background-position: 50%;
+    background-size: cover;
+}
+
+.bg-2 {
+    background: url("img/webp/bg-portfolio-shot-crop.webp");
+    background-position: 50%;
+    background-size: cover;
+}
+
+.bg-3 {
+    background: url("img/webp/bg-future.webp");
+    background-position: 50%;
+    background-size: cover;
+}
+
+.caps-r {
+    /* like BassCSS 'caps' but regular letter spacing*/
+    text-transform: uppercase;
+}
+
+.logo {
+    fill: currentColor;
+}
+
