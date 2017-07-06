@@ -18,8 +18,6 @@
     "gulp-stylefmt": "^1.1.0",
     "postcss": "^5.0.14",
     "postcss-calc": "^5.2.0",
-    "postcss-cli": "^2.4.0",
-    "postcss-color-function": "^2.0.0",
     "postcss-cssnext": "^2.11.0",
     "postcss-custom-media": "^5.0.0",
     "postcss-custom-properties": "^5.0.0",
@@ -27,6 +25,8 @@
     "postcss-font-magician": "^2.0.0",
     "postcss-import": "^8.0.2",
     "postcss-reporter": "^4.0.0",
-    "postcss-url": "^7.0.0"
+    "postcss-uncss": "^0.14.0",
+    "postcss-url": "^7.0.0",
+    "uncss": "^0.14.1"
   }
 }

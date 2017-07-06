@@ -7,61 +7,70 @@ let imagemin = require('gulp-imagemin')
 let stylefmt = require('gulp-stylefmt')
 let del = require('del')
 
-let paths = {
-    css: 'src/css/**/*.css',
-    html: 'src/index.html'
-}
-
-gulp.task('clean', function () {
-    return del(['docs'])
+gulp.task('clean:img', () => {
+  del(['docs/img'])
 })
 
-gulp.task('images', ['clean'], function () {
-    return gulp.src('src/img/**/*')
-        .pipe(imagemin([
-            imagemin.jpegtran({ progressive: true }),
-            imagemin.optipng({ optimizationLevel: 5 }),
-            imagemin.svgo({ plugins: [{ removeViewBox: true }] })
-        ], {
-            verbose: true
-        }))
-        .pipe(gulp.dest('docs/img'))
+gulp.task('clean:html', () => {
+  del(['docs/*.html'])
 })
 
-gulp.task('html', ['clean'], function () {
-    return gulp.src('src/index.html')
-        .pipe(validator({ verbose: true }))  // w3c html validation
-        .pipe(gulp.dest('docs/'))
+gulp.task('clean:css', () => {
+  del(['docs/*.css', 'docs/*.map'])
 })
 
-gulp.task('css', ['clean'], function () {
-    return gulp.src('src/css/base.css')
-        .pipe(postcss([
-            require('postcss-import'),
-            require('postcss-url'),
-            require('postcss-cssnext'),
-            require('postcss-font-magician'),
-            require('css-mqpacker'),
-            require('postcss-custom-media'),
-            require('postcss-custom-properties'),
-            require('postcss-calc'),
-            require('postcss-color-function'),
-            require('postcss-reporter')
-        ]))
-        .pipe(stylefmt())
-        .pipe(gulp.dest('docs/css'))
+gulp.task('clean', ['clean:img', 'clean:html', 'clean:css'])
+
+gulp.task('images', ['clean:img'], function() {
+  let plugins = [
+    imagemin.jpegtran({ progressive: true }),
+    imagemin.optipng({ optimizationLevel: 1 }),
+    imagemin.svgo({ plugins: [{ removeViewBox: true }] })
+  ]
+  return gulp
+    .src('src/img/**')
+    .pipe(imagemin(plugins, { verbose: true }))
+    .pipe(gulp.dest('docs/img'))
 })
 
-gulp.task('minify', ['css'], function () {
-    return gulp.src(['docs/css/*.css'])
-        .pipe(sourcemap.init())
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(postcss([require('cssnano')({ autoprefixer: false })]))
-        .pipe(sourcemap.write('.'))
-        .pipe(gulp.dest('docs/css'))
+gulp.task('html', ['clean:html'], function() {
+  return gulp
+    .src('src/index.html')
+    .pipe(validator({ verbose: true })) // w3c html validation
+    .pipe(gulp.dest('docs/'))
 })
 
-gulp.task('default', ['minify', 'html', 'images'], function () {
-    return gulp.src('src/CNAME')
-        .pipe(gulp.dest('docs/'))
+gulp.task('css', ['html', 'clean:css'], function() {
+  let processors = [
+    require('postcss-import'),
+    require('postcss-url'),
+    require('postcss-discard-comments'),
+    require('postcss-uncss')({ html: ['docs/index.html'] }),
+    require('postcss-custom-properties'),
+    require('postcss-custom-media'),
+    require('css-mqpacker'),
+    require('postcss-font-magician'),
+    require('postcss-cssnext'),
+    //require('postcss-calc'),
+    require('postcss-reporter')
+  ]
+  return gulp
+    .src('src/css/styles.css')
+    .pipe(postcss(processors))
+    .pipe(stylefmt())
+    .pipe(gulp.dest('docs/'))
+})
+
+gulp.task('minify', ['css'], function() {
+  return gulp
+    .src('docs/styles.css')
+    .pipe(sourcemap.init())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(postcss([require('cssnano')({ autoprefixer: false })]))
+    .pipe(sourcemap.write('.'))
+    .pipe(gulp.dest('docs/'))
+})
+
+gulp.task('default', ['minify'], function() {
+  return gulp.src('src/CNAME').pipe(gulp.dest('docs/'))
 })
