@@ -2,16 +2,12 @@
 
 /* Extensions */
 
-/* Notes
-   #d88 <-- a nice red
- */
-
 body {
-    font-family: "Roboto Mono", serif !important;
+    font-family: 'Inconsolata', monospace;
 }
 
 header {
-    background: url("img/webp/bg.webp");
+    background: url("img/bg-1024.jpg");
     filter: drop-shadow(0 0 5px);
 }
 
@@ -20,11 +16,14 @@ header section {
 }
 
 header h1 {
-    font-weight: 900;
+    font-family: "Roboto Mono", sans-serif;
+    font-weight: 700;
 }
 
 article p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Roboto Mono", sans-serif;
+    font-weight: 400;
+    font-style: italic;
 }
 
 .bg-1 {
