@@ -3,57 +3,85 @@ let postcss = require('gulp-postcss')
 let rename = require('gulp-rename')
 let sourcemap = require('gulp-sourcemaps')
 let validator = require('gulp-html')
-let imagemin = require('gulp-imagemin')
 let stylefmt = require('gulp-stylefmt')
 let del = require('del')
 
-gulp.task('clean:img', () => {
-  del(['docs/img'])
+let op = {
+  uncss: {
+    html: ['docs/index.html']
+  },
+  fontmagician: {
+    variants: {
+      'Roboto Mono': {
+        '400': [],
+        '400 italic': [],
+        '700': []
+      },
+      'Inconsolata': {
+        '400': [],
+        '700': []
+      }
+    }
+  },
+  cssnano: {
+    autoprefixer: false
+  }
+}
+
+/**
+ * Clean tasks
+ */
+gulp.task('clean:img', function() {
+  return del(['docs/img/**/*'])
 })
 
-gulp.task('clean:html', () => {
-  del(['docs/*.html'])
+gulp.task('clean:html', function() {
+  return del(['docs/*.html'])
 })
 
-gulp.task('clean:css', () => {
-  del(['docs/*.css', 'docs/*.map'])
+gulp.task('clean:css', function() {
+  return del(['docs/*.css', 'docs/*.map'])
 })
 
-gulp.task('clean', ['clean:img', 'clean:html', 'clean:css'])
-
-gulp.task('images', ['clean:img'], function() {
-  let plugins = [
-    imagemin.jpegtran({ progressive: true }),
-    imagemin.optipng({ optimizationLevel: 1 }),
-    imagemin.svgo({ plugins: [{ removeViewBox: true }] })
-  ]
-  return gulp
-    .src('src/img/**')
-    .pipe(imagemin(plugins, { verbose: true }))
-    .pipe(gulp.dest('docs/img'))
+gulp.task('clean', function() {
+  return del(['docs/**'])
 })
 
-gulp.task('html', ['clean:html'], function() {
-  return gulp
-    .src('src/index.html')
-    .pipe(validator({ verbose: true })) // w3c html validation
-    .pipe(gulp.dest('docs/'))
+/**
+ * Image tasks
+ */
+gulp.task('images', ['clean'], function() {
+  return gulp.src('src/img/**/*').pipe(gulp.dest('docs/img'))
 })
 
-gulp.task('css', ['html', 'clean:css'], function() {
+/**
+ * HTML tasks
+ */
+gulp.task('html', ['clean'], function() {
+  return gulp.src('src/index.html').pipe(gulp.dest('docs'))
+})
+
+gulp.task('html:validate', ['html'], function() {
+  return gulp.src('docs/index.html').pipe(validator({ verbose: true }))
+})
+
+/**
+ * CSS tasks
+ */
+gulp.task('css', ['clean', 'html'], function() {
   let processors = [
     require('postcss-import'),
     require('postcss-url'),
     require('postcss-discard-comments'),
-    require('postcss-uncss')({ html: ['docs/index.html'] }),
+    require('postcss-uncss')(op.uncss),
     require('postcss-custom-properties'),
     require('postcss-custom-media'),
     require('css-mqpacker'),
-    require('postcss-font-magician'),
+    require('postcss-font-magician')(op.fontmagician),
     require('postcss-cssnext'),
-    //require('postcss-calc'),
     require('postcss-reporter')
   ]
+
   return gulp
     .src('src/css/styles.css')
     .pipe(postcss(processors))
@@ -61,16 +89,27 @@ gulp.task('css', ['html', 'clean:css'], function() {
     .pipe(gulp.dest('docs/'))
 })
 
-gulp.task('minify', ['css'], function() {
+/**
+ * CSS minification tasks
+ */
+gulp.task('minify', ['clean', 'css'], function() {
   return gulp
     .src('docs/styles.css')
     .pipe(sourcemap.init())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(postcss([require('cssnano')({ autoprefixer: false })]))
+    .pipe(postcss([require('cssnano')(op.cssnano)]))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('docs/'))
 })
 
-gulp.task('default', ['minify'], function() {
+/**
+ * Watch task
+ */
+gulp.task('watch', function() {})
+
+/**
+ * Default task
+ */
+gulp.task('default', ['clean', 'minify', 'images'], function() {
   return gulp.src('src/CNAME').pipe(gulp.dest('docs/'))
 })
