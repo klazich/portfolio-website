@@ -17,7 +17,7 @@ let op = {
         '400 italic': [],
         '700': []
       },
-      'Inconsolata': {
+      Inconsolata: {
         '400': [],
         '700': []
       }
@@ -73,7 +73,7 @@ gulp.task('css', ['clean', 'html'], function() {
     require('postcss-import'),
     require('postcss-url'),
     require('postcss-discard-comments'),
-    require('postcss-uncss')(op.uncss),
+    //require('postcss-uncss')(op.uncss),
     require('postcss-custom-properties'),
     require('postcss-custom-media'),
     require('css-mqpacker'),
@@ -111,5 +111,5 @@ gulp.task('watch', function() {})
  * Default task
  */
 gulp.task('default', ['clean', 'minify', 'images'], function() {
-  return gulp.src('src/CNAME').pipe(gulp.dest('docs/'))
+  return gulp.src(['src/CNAME', 'src/manifest.json']).pipe(gulp.dest('docs/'))
 })
