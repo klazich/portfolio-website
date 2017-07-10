@@ -8,9 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111">
   <link rel="stylesheet" href="styles.min.css">
-  <link rel="icon" type="img/png" href="img/icon192.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="img/png" href="img/kl-icon-48.png">
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
   <link rel="manifest" href="manifest.json">
+  <script src="https://use.fontawesome.com/33a7b75d21.js" async></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" async></script>
 </head>
 <body>
 
@@ -20,35 +22,38 @@
 
       <nav class="flex justify-between items-end p1 border-bottom">
 
-        <svg class="logo xs-logo"
-             height="3em"
+        <svg height="3em"
              viewBox="0 0 300 200"
              xmlns="http://www.w3.org/2000/svg"
              fill-rule="evenodd"
              clip-rule="evenodd"
              stroke-linejoin="round"
              stroke-miterlimit="1.4">
-          <path d="M300 195h-89v-43l89 43zm-198 5L0 150.8V0l102 49.2V200zm103 0l-98-48.5 24-23 74 71.5zm.7-6.4l-71-68.6 71-68.7v137.3zM104.2 0L206 49l-99 95.4V45.7l-33.7-16 31-29.7z"></path>
+          <path class="logo xs-logo"
+                d="M300 195h-89v-43l89 43zm-198 5L0 150.8V0l102 49.2V200zm103 0l-98-48.5 24-23 74 71.5zm.7-6.4l-71-68.6 71-68.7v137.3zM104.2 0L206 49l-99 95.4V45.7l-33.7-16 31-29.7z"></path>
         </svg>
 
 
         <ul class="list-reset m0">
           <li class="inline-block">
             <a href="https://github.com/klazich"
-               rel="noopener"
+               rel="noopener noreferrer"
                target="_blank"
+               aria-label="github profile link"
                class="black"><i class="fa fa-github fa-fw" aria-hidden="true"></i></a>
           </li>
           <li class="inline-block">
             <a href="https://twitter.com/TheKlazich"
-               rel="noopener"
+               rel="noopener noreferrer"
                target="_blank"
+               aria-label="twitter profile link"
                class="black"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i></a>
           </li>
           <li class="inline-block">
             <a href="https://www.facebook.com/kevin.lazich"
-               rel="noopener"
+               rel="noopener noreferrer"
                target="_blank"
+               aria-label="facebook profile link"
                class="black"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i></a>
           </li>
         </ul>
@@ -61,7 +66,7 @@
           <h1 class="xs-header h00 h00-responsive my0 sm-ml3 caps bold">Lazich</h1>
         </div>
 
-        <div class="xs-subhead sm-subhead sm-flex justify-center caps">
+        <div class="xs-subhead sm-subhead sm-flex justify-center caps bold">
           <div class="h6 md-h5 lg-h4">Programming Hobbyist</div>
           <div class="h6 md-h5 lg-h4 sm-mx3">Aspiring Developer</div>
           <div class="h6 md-h5 lg-h4">Can count past ten</div>
@@ -117,7 +122,7 @@
         <article class="sm-col sm-col-6 px2">
           <h2 class="h3 caps">Hoodie</h2>
           <h3 class="h4"><a href="https://github.com/hoodiehq/hoodie/pull/592"
-                            rel="noopener"
+                            rel="noopener noreferrer"
                             target="_blank">PR #592</a></h3>
           <p>These guys were super awesome. This was my first open source contribution and the people at Hoodie were incredibly supportive. This was also my fist deep dive into NPM and NodeJS.</p>
           <ul class="list-reset">
@@ -173,7 +178,9 @@
         <div class="sm-col sm-col-6">
 
           <div class="p2">
-            <p class="h6">2017 KEVIN LAZICH <a href="" rel="noopener" class="caps regular ml1">dev@kevinlazich.com</a>
+            <p class="h6">2017 KEVIN LAZICH <a href=""
+                                               rel="noopener noreferrer"
+                                               class="caps regular ml1">dev@kevinlazich.com</a>
             </p>
           </div>
         </div>
@@ -181,7 +188,7 @@
         <div class="sm-col sm-col-6">
           <div class="caps-r p2"><p class="h6">Header Background Image by
             <a href="http://unsplash.com/@groosheck?utm_campaign=photographer-credit"
-               rel="noopener"
+               rel="noopener noreferrer"
                target="_blank"
                title="Download free do whatever you want high-resolution photos from Michał Grosicki"
                class="caps regular">Michał Grosicki</a></p>

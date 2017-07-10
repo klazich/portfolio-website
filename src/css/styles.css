@@ -60,6 +60,15 @@ article p {
     fill: currentColor;
 }
 
+.logo:hover {
+    fill: #3c464d;
+    cursor: pointer;
+}
+
+i:hover {
+    color: #3c464d;
+}
+
 @media (max-width: 40em) {
     .xs-logo {
         height: 2em !important;
@@ -68,6 +77,7 @@ article p {
     .xs-header {
         text-align: left;
         margin-left: 0;
+        font-family: "Roboto Mono", sans-serif;
     }
 
     .xs-subhead {
