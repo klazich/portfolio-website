@@ -8,7 +8,7 @@ let del = require('del')
 
 let op = {
   uncss: {
-    html: ['docs/index.html']
+    html: ['www/index.html']
   },
   fontmagician: {
     variants: {
@@ -34,44 +34,44 @@ let op = {
  * Clean tasks
  */
 gulp.task('clean:img', function() {
-  return del(['docs/img/**/*'])
+  return del(['www/img/**/*'])
 })
 
 gulp.task('clean:html', function() {
-  return del(['docs/*.html'])
+  return del(['www/*.html'])
 })
 
 gulp.task('clean:css', function() {
-  return del(['docs/*.css', 'docs/*.map'])
+  return del(['www/css/*.css', 'www/css/*.map'])
 })
 
 gulp.task('clean', function() {
-  return del(['docs/**'])
+  return del(['www/**'])
 })
 
 /**
  * Javascript tasks
  */
 gulp.task('js', ['clean'], function () {
-  return gulp.src('src/js/*.js').pipe(gulp.dest('docs/js'))
+  return gulp.src('src/js/*.js').pipe(gulp.dest('www/js'))
 })
 
 /**
  * Image tasks
  */
 gulp.task('images', ['clean'], function() {
-  return gulp.src('src/img/**/*').pipe(gulp.dest('docs/img'))
+  return gulp.src('src/img/**/*').pipe(gulp.dest('www/img'))
 })
 
 /**
  * HTML tasks
  */
 gulp.task('html', ['clean'], function() {
-  return gulp.src('src/index.html').pipe(gulp.dest('docs'))
+  return gulp.src('src/index.html').pipe(gulp.dest('www'))
 })
 
 gulp.task('html:validate', ['html'], function() {
-  return gulp.src('docs/index.html').pipe(validator({ verbose: true }))
+  return gulp.src('www/index.html').pipe(validator({ verbose: true }))
 })
 
 /**
@@ -95,7 +95,7 @@ gulp.task('css', ['clean', 'html'], function() {
     .src('src/css/styles.css')
     .pipe(postcss(processors))
     .pipe(stylefmt())
-    .pipe(gulp.dest('docs/'))
+    .pipe(gulp.dest('www/css'))
 })
 
 /**
@@ -103,12 +103,12 @@ gulp.task('css', ['clean', 'html'], function() {
  */
 gulp.task('minify', ['clean', 'css'], function() {
   return gulp
-    .src('docs/styles.css')
+    .src('www/css/styles.css')
     .pipe(sourcemap.init())
     .pipe(rename({ suffix: '.min' }))
     .pipe(postcss([require('cssnano')(op.cssnano)]))
     .pipe(sourcemap.write('.'))
-    .pipe(gulp.dest('docs/'))
+    .pipe(gulp.dest('www/css'))
 })
 
 /**
@@ -120,5 +120,5 @@ gulp.task('watch', function() {})
  * Default task
  */
 gulp.task('default', ['clean', 'minify', 'js', 'images'], function() {
-  return gulp.src(['src/CNAME', 'src/manifest.json']).pipe(gulp.dest('docs/'))
+  return gulp.src(['src/CNAME', 'src/manifest.json']).pipe(gulp.dest('www/'))
 })
