@@ -29,7 +29,5 @@ node_modules/
 # dotenv environment variables file
 .env
 
-# GitHub Pages Directory
-/cwebp.exe
+
 /loader.min.js
-/src/img/webp/
