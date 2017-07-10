@@ -31,3 +31,5 @@ node_modules/
 
 # GitHub Pages Directory
 /cwebp.exe
+/loader.min.js
+/src/img/webp/

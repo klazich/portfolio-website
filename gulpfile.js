@@ -21,7 +21,9 @@ let op = {
         '400': [],
         '700': []
       }
-    }
+    },
+    async: 'fontloader.js'
+
   },
   cssnano: {
     autoprefixer: false
@@ -45,6 +47,13 @@ gulp.task('clean:css', function() {
 
 gulp.task('clean', function() {
   return del(['docs/**'])
+})
+
+/**
+ * Javascript tasks
+ */
+gulp.task('js', ['clean'], function () {
+  return gulp.src('src/js/*.js').pipe(gulp.dest('docs/js'))
 })
 
 /**
@@ -73,7 +82,7 @@ gulp.task('css', ['clean', 'html'], function() {
     require('postcss-import'),
     require('postcss-url'),
     require('postcss-discard-comments'),
-    //require('postcss-uncss')(op.uncss),
+    require('postcss-uncss')(op.uncss),
     require('postcss-custom-properties'),
     require('postcss-custom-media'),
     require('css-mqpacker'),
@@ -110,6 +119,6 @@ gulp.task('watch', function() {})
 /**
  * Default task
  */
-gulp.task('default', ['clean', 'minify', 'images'], function() {
+gulp.task('default', ['clean', 'minify', 'js', 'images'], function() {
   return gulp.src(['src/CNAME', 'src/manifest.json']).pipe(gulp.dest('docs/'))
 })
