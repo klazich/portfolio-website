@@ -10,21 +10,6 @@ let op = {
   uncss: {
     html: ['www/index.html']
   },
-  fontmagician: {
-    variants: {
-      'Roboto Mono': {
-        '400': [],
-        '400 italic': [],
-        '700': []
-      },
-      Inconsolata: {
-        '400': [],
-        '700': []
-      }
-    },
-    async: 'fontloader.js'
-
-  },
   cssnano: {
     autoprefixer: false
   }
@@ -86,7 +71,6 @@ gulp.task('css', ['clean', 'html'], function() {
     require('postcss-custom-properties'),
     require('postcss-custom-media'),
     require('css-mqpacker'),
-    require('postcss-font-magician')(op.fontmagician),
     require('postcss-cssnext'),
     require('postcss-reporter')
   ]
