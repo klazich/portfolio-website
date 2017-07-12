@@ -10,6 +10,11 @@ body {
   background-color: #fff;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 svg {
   max-height: 100%;
 }
@@ -179,6 +184,13 @@ blockquote {
   margin-right: -1rem;
 }
 
+.mxn3 {
+  margin-left: -32px;
+  margin-left: -2rem;
+  margin-right: -32px;
+  margin-right: -2rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -201,18 +213,16 @@ blockquote {
   padding: 1rem;
 }
 
-.py2 {
-  padding-top: 16px;
-  padding-top: 1rem;
-  padding-bottom: 16px;
-  padding-bottom: 1rem;
-}
-
 .px2 {
   padding-left: 16px;
   padding-left: 1rem;
   padding-right: 16px;
   padding-right: 1rem;
+}
+
+.p3 {
+  padding: 32px;
+  padding: 2rem;
 }
 
 .flex {
@@ -277,6 +287,46 @@ blockquote {
 
 .bg-center {
   background-position: center;
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?19751943');
+  src: url('../font/fontello.eot?19751943#iefix') format('embedded-opentype'), url('../font/fontello.woff2?19751943') format('woff2'), url('../font/fontello.woff?19751943') format('woff'), url('../font/fontello.ttf?19751943') format('truetype'), url('../font/fontello.svg?19751943#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  -webkit-font-feature-settings: normal;
+  font-feature-settings: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-twitter:before {
+  content: '\f099';
+}
+
+.icon-github-circled:before {
+  content: '\f09b';
+}
+
+.icon-facebook-official:before {
+  content: '\f230';
 }
 
 body {
@@ -398,6 +448,12 @@ i:hover {
 
   .md-h2 {
     font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .lg-col-4 {
+    width: 33.33333%;
   }
 }
 

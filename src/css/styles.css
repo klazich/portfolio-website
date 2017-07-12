@@ -1,4 +1,5 @@
 @import "base.css";
+@import "fontello.css";
 
 /* Extensions */
 
@@ -17,24 +18,6 @@ header section {
 .header-content * {
     font-family: "Roboto Mono", sans-serif;
     line-height: 0.9;
-}
-
-.bg-1 {
-    background: url("img/siyan-ren-14405-min.jpg");
-    background-position: 50%;
-    background-size: cover;
-}
-
-.bg-2 {
-    background: url("img/webp/bg-portfolio-shot-crop.webp");
-    background-position: 50%;
-    background-size: cover;
-}
-
-.bg-3 {
-    background: url("img/webp/bg-future.webp");
-    background-position: 50%;
-    background-size: cover;
 }
 
 .caps-r {
