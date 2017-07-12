@@ -35,10 +35,10 @@ gulp.task('clean', function() {
 })
 
 /**
- * Javascript tasks
+ * Font tasks
  */
-gulp.task('js', ['clean'], function () {
-  return gulp.src('src/js/*.js').pipe(gulp.dest('www/js'))
+gulp.task('fonts', ['clean'], function () {
+  return gulp.src('src/font/**/*').pipe(gulp.dest('www/font'))
 })
 
 /**
@@ -46,6 +46,13 @@ gulp.task('js', ['clean'], function () {
  */
 gulp.task('images', ['clean'], function() {
   return gulp.src('src/img/**/*').pipe(gulp.dest('www/img'))
+})
+
+/**
+ * Javascript tasks
+ */
+gulp.task('js', ['clean'], function () {
+  return gulp.src('src/js/*.js').pipe(gulp.dest('www/js'))
 })
 
 /**
@@ -103,6 +110,6 @@ gulp.task('watch', function() {})
 /**
  * Default task
  */
-gulp.task('default', ['clean', 'minify', 'js', 'images'], function() {
+gulp.task('default', ['clean', 'minify', 'js', 'images', 'fonts'], function() {
   return gulp.src(['src/CNAME', 'src/manifest.json']).pipe(gulp.dest('www/'))
 })
