@@ -27,6 +27,7 @@
 /* Optional Modules (not included in Basscss by default) */
 
 @import "basscss-utility-headings";
+@import "basscss-responsive-border";
 
 @import 'basscss-addons/modules/responsive-margin';
 @import 'basscss-addons/modules/responsive-padding';
