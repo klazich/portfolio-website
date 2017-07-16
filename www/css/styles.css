@@ -26,7 +26,9 @@ a {
 h1,
 h2,
 h3,
-h5 {
+h4,
+h5,
+h6 {
   font-weight: 600;
   line-height: 1.25;
   margin-top: 1em;
@@ -48,9 +50,19 @@ h3 {
   font-size: 1.25rem;
 }
 
+h4 {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
 h5 {
   font-size: 14px;
   font-size: .875rem;
+}
+
+h6 {
+  font-size: 12px;
+  font-size: .75rem;
 }
 
 p,
@@ -146,6 +158,10 @@ blockquote {
   margin: 0;
 }
 
+.mt0 {
+  margin-top: 0;
+}
+
 .my0 {
   margin-top: 0;
   margin-bottom: 0;
@@ -206,11 +222,30 @@ blockquote {
   padding: 1rem;
 }
 
+.py2 {
+  padding-top: 16px;
+  padding-top: 1rem;
+  padding-bottom: 16px;
+  padding-bottom: 1rem;
+}
+
 .px2 {
   padding-left: 16px;
   padding-left: 1rem;
   padding-right: 16px;
   padding-right: 1rem;
+}
+
+.py3 {
+  padding-top: 32px;
+  padding-top: 2rem;
+  padding-bottom: 32px;
+  padding-bottom: 2rem;
+}
+
+.col {
+  float: left;
+  box-sizing: border-box;
 }
 
 .flex {
@@ -285,7 +320,8 @@ blockquote {
   font-style: normal;
 }
 
-[class^="icon-"]:before {
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
@@ -326,7 +362,7 @@ body {
 }
 
 header {
-  background: url("../img/bg-1024.jpg");
+  background: url("../img/min/bg-1900-min.jpg");
 }
 
 header section {
@@ -355,7 +391,7 @@ header section {
 }
 
 i:hover {
-  color: #3c464d;
+  color: grey;
 }
 
 figure {
@@ -380,7 +416,6 @@ figure {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
 }
 
 figure:hover .image {
@@ -389,11 +424,6 @@ figure:hover .image {
 
 figure:hover .author {
   opacity: 1;
-}
-
-.text {
-  color: #3c464d;
-  font-size: 16px;
 }
 
 @media (min-width: 40em) {

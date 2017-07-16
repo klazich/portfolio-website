@@ -76,7 +76,7 @@ gulp.task('css', ['clean', 'html'], function() {
     require('postcss-import'),
     require('postcss-url'),
     require('postcss-discard-comments'),
-    //require('postcss-uncss')(op.uncss),
+    require('postcss-uncss')(op.uncss),
     require('postcss-custom-properties'),
     require('postcss-custom-media'),
     require('css-mqpacker'),

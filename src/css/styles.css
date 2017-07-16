@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background: url("../img/bg-1024.jpg");
+    background: url("../img/min/bg-1900-min.jpg");
 }
 
 header section {
@@ -35,7 +35,7 @@ header section {
 }
 
 i:hover {
-    color: #3c464d;
+    color: grey;
 }
 
 @media (max-width: 40em) {
@@ -82,7 +82,6 @@ figure {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%)
 }
 
 figure:hover .image {
@@ -91,11 +90,6 @@ figure:hover .image {
 
 figure:hover .author {
     opacity: 1;
-}
-
-.text {
-    color: #3c464d;
-    font-size: 16px;
 }
 
 /* Custom media queries */
