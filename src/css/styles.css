@@ -8,7 +8,8 @@ body {
 }
 
 header {
-    background: url("../img/min/bg-1024.jpg");
+    background-image: url("../img/min/bg-1024.jpg");
+    filter: drop-shadow(0 2px 4px);
 }
 
 /*header section {
