@@ -26,7 +26,6 @@ a {
 h1,
 h2,
 h3,
-h4,
 h5,
 h6 {
   font-weight: 600;
@@ -48,11 +47,6 @@ h2 {
 h3 {
   font-size: 20px;
   font-size: 1.25rem;
-}
-
-h4 {
-  font-size: 16px;
-  font-size: 1rem;
 }
 
 h5 {
@@ -158,18 +152,9 @@ blockquote {
   margin: 0;
 }
 
-.mt0 {
-  margin-top: 0;
-}
-
 .my0 {
   margin-top: 0;
   margin-bottom: 0;
-}
-
-.ml1 {
-  margin-left: 8px;
-  margin-left: .5rem;
 }
 
 .my1 {
@@ -222,30 +207,11 @@ blockquote {
   padding: 1rem;
 }
 
-.py2 {
-  padding-top: 16px;
-  padding-top: 1rem;
-  padding-bottom: 16px;
-  padding-bottom: 1rem;
-}
-
 .px2 {
   padding-left: 16px;
   padding-left: 1rem;
   padding-right: 16px;
   padding-right: 1rem;
-}
-
-.py3 {
-  padding-top: 32px;
-  padding-top: 2rem;
-  padding-bottom: 32px;
-  padding-bottom: 2rem;
-}
-
-.col {
-  float: left;
-  box-sizing: border-box;
 }
 
 .flex {
@@ -320,8 +286,7 @@ blockquote {
   font-style: normal;
 }
 
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
+[class^="icon-"]:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
@@ -341,10 +306,6 @@ blockquote {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-camera:before {
-  content: '\e800';
-}
-
 .icon-twitter:before {
   content: '\f099';
 }
@@ -362,13 +323,7 @@ body {
 }
 
 header {
-  background: url("../img/min/bg-1024.min.jpg");
-}
-
-header section {
-  filter: url('data:image/svg+xml;charset=utf-8, <svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="0" /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncA type="table" tableValues="0 0.9" /></feComponentTransfer></filter></svg>#filter');
-  -webkit-filter: drop-shadow(-1px 1px 0.6px slategrey) blur(0px) opacity(90%);
-  filter: drop-shadow(-1px 1px 0.6px slategrey) blur(0px) opacity(90%);
+  background: url("../img/min/bg-1024.jpg");
 }
 
 .header-content * {
@@ -390,7 +345,7 @@ header section {
   cursor: pointer;
 }
 
-i:hover {
+a:hover {
   color: grey;
 }
 
@@ -408,7 +363,7 @@ figure {
   backface-visibility: hidden;
 }
 
-.author {
+.overlay {
   transition: .5s ease;
   opacity: 0;
   position: absolute;
@@ -422,7 +377,7 @@ figure:hover .image {
   opacity: 0.3;
 }
 
-figure:hover .author {
+figure:hover .overlay {
   opacity: 1;
 }
 
@@ -514,6 +469,10 @@ figure:hover .author {
 @media (min-width: 64em) {
   .lg-col-4 {
     width: 33.33333%;
+  }
+
+  header {
+    background: url("../img/min/bg-1900.jpg");
   }
 }
 
