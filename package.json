@@ -16,6 +16,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-stylefmt": "^1.1.0",
+    "imagemin": "^5.3.1",
+    "imagemin-webp": "^4.0.0",
     "postcss": "^5.0.14",
     "postcss-cssnext": "^2.11.0",
     "postcss-custom-media": "^5.0.0",
