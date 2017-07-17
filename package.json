@@ -3,11 +3,11 @@
     "basscss": "^8.0.0",
     "basscss-addons": "^1.0.0-beta4",
     "basscss-basic": "^1.0.0",
+    "basscss-responsive-border": "^1.1.1",
     "basscss-utility-headings": "^0.1.0",
     "gulp-html": "^0.4.7"
   },
   "devDependencies": {
-    "basscss-responsive-border": "^1.1.1",
     "css-mqpacker": "^6.0.1",
     "cssnano": "^3.4.0",
     "del": "^3.0.0",
