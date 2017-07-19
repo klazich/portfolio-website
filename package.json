@@ -1,4 +1,11 @@
 {
+  "name": "portfolio-website-bassplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:klazich/portfolio-website.git",
+  "description": "portfolio, kevinlazich.com",
+  "author": "Kevin <dev@kevinlazich.com>",
+  "license": "MIT",
   "dependencies": {
     "basscss": "^8.0.0",
     "basscss-addons": "^1.0.0-beta4",
