@@ -314,6 +314,10 @@ blockquote {
   content: '\f09b';
 }
 
+.icon-code:before {
+  content: '\f121';
+}
+
 .icon-facebook-official:before {
   content: '\f230';
 }

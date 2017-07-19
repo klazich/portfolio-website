@@ -13,6 +13,16 @@
   <link href="manifest.json" rel="manifest">
 </head>
 
+<!--TODO
+  - PostCSS information  http://postcss.org/
+  - BassCSS information  http://basscss.com/
+  - Discuss hosting the site with firebase
+  - Add info on site audits
+  - Move to README.md if article grows to large
+  - Finish links
+-->
+
+
 <body>
 <header class="p2 bg-cover bg-center">
   <section class="center max-width-4 mx-auto" id="header">
@@ -27,17 +37,17 @@
       <ul class="list-reset m0">
         <li class="inline-block">
           <a aria-label="github profile link" title="Kevin Lazich's GitHub Profile" class="black"
-             href="https://github.com/klazich" rel="noopener noreferrer" target="_blank">
+            href="https://github.com/klazich" rel="noopener noreferrer" target="_blank">
             <i aria-hidden="true" class="icon-github-circled h2"></i></a>
         </li>
         <li class="inline-block">
           <a aria-label="twitter profile link" title="Kevin Lazich's Twitter Profile" class="black"
-             href="https://twitter.com/TheKlazich" rel="noopener noreferrer" target="_blank">
+            href="https://twitter.com/TheKlazich" rel="noopener noreferrer" target="_blank">
             <i aria-hidden="true" class="icon-twitter h2"></i></a>
         </li>
         <li class="inline-block">
           <a aria-label="facebook profile link" title="Kevin Lazich's Facebook Profile" class="black"
-             href="https://www.facebook.com/kevin.lazich" rel="noopener noreferrer" target="_blank">
+            href="https://www.facebook.com/kevin.lazich" rel="noopener noreferrer" target="_blank">
             <i aria-hidden="true" class="icon-facebook-official h2"></i></a>
         </li>
       </ul>
@@ -63,39 +73,46 @@
 
 
 <div class="max-width-4 mx-auto my4">
+
+
   <!--FEATURED WORKS-->
   <section class="p2" id="works">
-    <h1 class="center sm-left-align border-bottom">
-      <a class="h2 sm-h1 text-decoration-none caps black" title="Featured Works" href="#works">Featured Works</a>
-    </h1>
+    <h1 class="center sm-left-align border-bottom"><a class="h2 sm-h1 text-decoration-none caps black"
+      title="Featured Works" href="#works">Featured Works</a></h1>
 
     <div class="clearfix mxn2">
       <article class="sm-col sm-col-6 px2">
-        <h2 class="h3 sm-h2 caps">
-          <a aria-label="link to github repo" href="https://github.com/klazich/portfolio-website"
-             rel="noopener noreferrer" target="_blank" class="text-decoration-none">
-            <i aria-hidden="true" class="icon-github-circled"></i> <span class="black">This Website</span></a></h2>
+        <h2 class="h3 sm-h2 caps"><a title="portfolio-website code repository at GitHub.com"
+          href="https://github.com/klazich/portfolio-website" rel="noopener noreferrer" target="_blank"
+          class="text-decoration-none"><i aria-hidden="true" class="icon-github-circled"></i> <span class="black">This Website</span>
+        </a></h2>
 
-        <p>My second project for <a aria-label="link to udacity.com" href="http://www.udacity.com"
-                                    rel="noopener noreferrer" target="_blank">Udacity</a>'s Full Stack Nanodegree and I
-          am still trying to understand how Web Design and Front End Development can be so frustrating and rewarding at
-          the same time.
-        </p>
+        <p>My second project for <a title="Udacity.com" href="http://www.udacity.com" rel="noopener noreferrer"
+          target="_blank">Udacity</a>'s Full Stack Nanodegree. The content on this website is responsive at just about
+          every viewport width (Go ahead and resize the window and watch that sweet sweet responsiveness.) and was
+          developed "mobile first."</p>
 
-        <p>Tasked with recreating a mock-up for a portfolio site in steps 1 through 3, I decided to spend a rediculous
-          amount of time on <a aria-label="image of step 4" href="img/step4.png" rel="noopener noreferrer"
-                               target="_blank">step 4</a>:</p>
+        <p>The project tasked me with using all my new HTML and CSS powers to turn a design mockup into a web page. I
+          had many <s>difficult</s> <s>ridiculous</s> amazing ideas and changes I wanted to make to the mockup.
+          Lucky for me <a title="Screen capture of step 4" href="img/step4.png" rel="noopener noreferrer"
+            target="_blank">step 4</a> leaves room (At least I hope my project reviewer thinks so...) to personalize and
+          add additional content to my portfolio.</p>
 
         <blockquote cite="https://udacity.com" class="h5 mx2">
-          Take the time to personalize your portfolio with custom colors, additional content and your own images.
+          <p>Step 4: Take the time to personalize your portfolio with custom colors, additional content and your own
+            images.</p>
         </blockquote>
 
-        <p>A personal portfolio website built with BassCSS and other PostCSS plugins. Utilizes responsive design
-          principles and "mobile first" development approach.</p>
+        <p>I spent quite a bit of time building this humble little web page. I spent a few weeks just learning <a
+          title="Affinity Designer website" href="https://affinity.serif.com/en-gb/" rel="noopener noreferrer"
+          target="_blank">Affinity Designer</a> and <a title="Rejected logo designs" href="img/various.png"
+          rel="noopener noreferrer" target="_blank">brainstorming</a> a site logo until deciding on the one at the <a
+          title="top" href="#header">top right</a> of this page.
 
-        <p>Go ahead and resize the window to watch that sweet sweet responsiveness.</p>
+          <!--PostCSS and BassCSS-->
 
-        <ul class="list-reset">
+
+        <ul class=" list-reset">
           <li class="inline-block h6 px1 regular border">HTML</li>
           <li class="inline-block h6 px1 regular border">CSS</li>
           <li class="inline-block h6 px1 regular border">PostCSS</li>
@@ -108,15 +125,13 @@
 
 
       <article class="sm-col sm-col-6 px2">
-        <h2 class="h3 sm-h2 caps">
-          <a aria-label="link to github repo" href="https://github.com/klazich/class-movie-website"
-             rel="noopener noreferrer" target="_blank" class="text-decoration-none">
-            <i aria-hidden="true" class="icon-github-circled"></i> <span class="black">class-movie</span></a></h2>
+        <h2 class="h3 sm-h2 caps"><a title="class-movie code repository at GitHub.com"
+          href="https://github.com/klazich/class-movie-website" rel="noopener noreferrer" target="_blank"
+          class="text-decoration-none"> <i aria-hidden="true" class="icon-github-circled"></i> <span class="black">class-movie</span>
+        </a></h2>
 
-        <p>My first project for the Full Stack Nanodegree at <a aria-label="link to udacity.com"
-                                                                href="http://www.udacity.com"
-                                                                rel="noopener noreferrer"
-                                                                target="_blank">Udacity</a>. </p>
+        <p>My first project for the Full Stack Nanodegree at <a title="Udacity.com" href="http://www.udacity.com"
+          rel="noopener noreferrer" target="_blank">Udacity</a>.</p>
 
         <p>I already knew a lot of the Python leading up to this project, but one of the most important things I
           learned from this project is how important code documentation is. I spent the majority of this project
@@ -135,19 +150,19 @@
 
 
       <article class="sm-col sm-col-6 px2">
-        <h2 class="h3 sm-h2 caps">
-          <a aria-label="link to github repo" href="https://github.com/klazich/assist"
-             rel="noopener noreferrer" target="_blank" class="text-decoration-none">
-            <i aria-hidden="true" class="icon-github-circled"></i> <span class="black">QI-assist: AQL</span></a></h2>
+        <h2 class="h3 sm-h2 caps"><a title="assist code repository at GitHub.com" aria-label="link to github repo"
+          href="https://github.com/klazich/assist" rel="noopener noreferrer" target="_blank"
+          class="text-decoration-none"> <i aria-hidden="true" class="icon-github-circled"></i> <span class="black">QI-assist: AQL</span>
+        </a></h2>
 
         <p>A small NodeJS CLI helper for my day job.</p>
 
-        <p>The AQL (<a aria-label="Link to AQL info" href="https://en.wikipedia.org/wiki/Acceptable_quality_limit"
-                       rel="noopener noreferrer" target="_blank">Acceptance Quality Limit</a>) we use at work is used
-          manly to determine a sample size for a given lot of parts. Seeing as it's just a simple cross table of AQL
-          values and lot sizes, the need for a command line interface for AQL lockups is debatable. None the less, I'd
-          been itching to try out <a aria-label="link to yargs" href="http://yargs.js.org/" rel="noopener noreferrer"
-                                     target="_blank">Yargs</a> at the time and it was a fun little project.</p>
+        <p>The AQL (<a title="AQL at wikipedia.com" href="https://en.wikipedia.org/wiki/Acceptable_quality_limit"
+          rel="noopener noreferrer" target="_blank">Acceptance Quality Limit</a>) we use at work is used manly to
+          determine a sample size for a given lot of parts. Seeing as it's just a simple cross table of AQL values and
+          lot sizes, the need for a command line interface for AQL lockups is debatable. None the less, I'd been itching
+          to try out <a title="yargs.com" href="http://yargs.js.org/" rel="noopener noreferrer"
+            target="_blank">Yargs</a> at the time and it was a fun little project.</p>
 
         <p>I have since added other commands to the interface but haven't revisited it in awhile.</p>
 
@@ -169,27 +184,26 @@
 
     <div class="clearfix mxn2">
       <article class="sm-col sm-col-6 px2">
-        <h2 class="h3 sm-h2 caps">
-          <a aria-label="link to github repo" href="https://github.com/hoodiehq/hoodie/pull/592"
-             rel="noopener noreferrer" target="_blank" class="text-decoration-none">
-            <i aria-hidden="true" class="icon-github-circled"></i> <span class="black">Hoodie: PR#592</span></a></h2>
+        <h2 class="h3 sm-h2 caps"><a title="Hoodie pull request #592" aria-label="link to github repo"
+          href="https://github.com/hoodiehq/hoodie/pull/592" rel="noopener noreferrer" target="_blank"
+          class="text-decoration-none"> <i aria-hidden="true" class="icon-github-circled"></i> <span class="black">Hoodie: PR#592</span>
+        </a></h2>
 
         <p>My first open source contribution on Github.</p>
 
         <p>The projects team members wanted to integrate tighter to NPM instead of rolling their own CLI. I helped out
-          with a postinstall NPM script for their package that automates a couple setup steps and makes it easier for
-          noob like me to use. The NodeJS code sets a "start" script in users package.json to spin up the easily spin
-          up a hoodie server. It also creates a README.md if one is not already created.</p>
+          by writing a postinstall NPM script that automates a couple setup steps and makes it easier for a
+          noob like me to use. The NodeJS code sets a "start" script in the users package.json to spin up the hoodie
+          server. It also creates a README.md if one is not already created.</p>
 
         <p>My eventual pull request closed 2 Issues and I learned a great deal about NodeJS as well as the the open
           source community. And had a BLAST!</p>
 
         <p>The people at Hoodie were great especially <a aria-label="link to github profile:gr2m"
-                                                         href="https://github.com/gr2m" rel="noopener noreferrer"
-                                                         target="_blank">gr2m</a>, who helped me out a great deal. I
-          encourage anyone new to programming and looking at contributing to open source to check out Hoodie's
+          href="https://github.com/gr2m" rel="noopener noreferrer" target="_blank">gr2m</a>, who helped me out a great
+          deal. I encourage anyone new to programming and looking at contributing to open source to check out Hoodie's
           <a aria-label="link to github repo:hoodie" href="https://github.com/hoodiehq/camp" rel="noopener noreferrer"
-             target="_blank">camp</a>.</p>
+            target="_blank">camp</a>.</p>
 
         <ul class="list-reset">
           <li class="inline-block h6 px1 regular border">NodeJS</li>
@@ -212,103 +226,105 @@
 
       <figure class="sm-col sm-col-6 lg-col-4 p2 m0">
         <img src="img/min/zebra-street-800.jpg" alt="Photo by Alex Rodriguez Santibanez" class="image"
-             sizes="(min-width: 64em) 320px, (max-width: 40em) 100vw, 50vw"
-             srcset="img/min/zebra-street-400.jpg 400w, img/min/zebra-street-800.jpg 800w"/>
+          sizes="(min-width: 64em) 320px, (max-width: 40em) 100vw, 50vw"
+          srcset="img/min/zebra-street-400.jpg 400w, img/min/zebra-street-800.jpg 800w"/>
         <figcaption class="overlay center bold">
           <h6>Photo by</h6>
           <a class="text-decoration-none"
-             href="http://unsplash.com/@alexrds?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
-             target="_blank" rel="noopener noreferrer"
-             title="Download free do whatever you want high-resolution photos from Alex Rodriguez Santibanez">
+            href="http://unsplash.com/@alexrds?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+            target="_blank" rel="noopener noreferrer"
+            title="Download free do whatever you want high-resolution photos from Alex Rodriguez Santibanez">
             Alex Rodriguez Santibanez</a>
         </figcaption>
       </figure>
 
       <figure class="sm-col sm-col-6 lg-col-4 p2 m0">
         <img src="img/min/concrete-800.jpg" alt="Photo by Patrick Tomasso" class="image"
-             sizes="(min-width: 64em) 320px, (max-width: 40em) 100vw, 50vw"
-             srcset="img/min/concrete-400.jpg 400w, img/min/concrete-800.jpg 800w"/>
+          sizes="(min-width: 64em) 320px, (max-width: 40em) 100vw, 50vw"
+          srcset="img/min/concrete-400.jpg 400w, img/min/concrete-800.jpg 800w"/>
         <figcaption class="overlay center bold">
           <h6>Photo by</h6>
           <a class="text-decoration-none"
-             href="http://unsplash.com/@groosheck?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
-             target="_blank" rel="noopener noreferrer"
-             title="Download free do whatever you want high-resolution photos from Michal Grosicki">
+            href="http://unsplash.com/@groosheck?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+            target="_blank" rel="noopener noreferrer"
+            title="Download free do whatever you want high-resolution photos from Michal Grosicki">
             Michal Grosicki</a>
         </figcaption>
       </figure>
 
       <figure class="sm-col sm-col-6 lg-col-4 p2 m0">
         <img src="img/min/colorful-800.jpg" alt="Photo by Patrick Tomasso" class="image"
-             sizes="(min-width: 64em) 320px, (max-width: 40em) 100vw, 50vw"
-             srcset="img/min/colorful-400.jpg 400w, img/min/colorful-800.jpg 800w"/>
+          sizes="(min-width: 64em) 320px, (max-width: 40em) 100vw, 50vw"
+          srcset="img/min/colorful-400.jpg 400w, img/min/colorful-800.jpg 800w"/>
         <figcaption class="overlay center bold">
           <h6>Photo by</h6>
           <a class="text-decoration-none"
-             href="http://unsplash.com/@impatrickt?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
-             target="_blank" rel="noopener noreferrer"
-             title="Download free do whatever you want high-resolution photos from Patrick Tomasso">
+            href="http://unsplash.com/@impatrickt?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+            target="_blank" rel="noopener noreferrer"
+            title="Download free do whatever you want high-resolution photos from Patrick Tomasso">
             Patrick Tomasso</a>
         </figcaption>
       </figure>
 
       <figure class="sm-col sm-col-6 lg-col-4 p2 m0">
         <img src="img/min/sky-pointer-800.jpg" alt="Photo by Riccardo Oliva" class="image"
-             sizes="(min-width: 64em) 320px, (max-width: 40em) 100vw, 50vw"
-             srcset="img/min/sky-pointer-400.jpg 400w, img/min/sky-pointer-800.jpg 800w"/>
+          sizes="(min-width: 64em) 320px, (max-width: 40em) 100vw, 50vw"
+          srcset="img/min/sky-pointer-400.jpg 400w, img/min/sky-pointer-800.jpg 800w"/>
         <figcaption class="overlay center bold">
           <h6>Photo by</h6>
           <a class="text-decoration-none"
-             href="http://unsplash.com/@rickycdo?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
-             target="_blank" rel="noopener noreferrer"
-             title="Download free do whatever you want high-resolution photos from Riccardo Oliva">
+            href="http://unsplash.com/@rickycdo?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+            target="_blank" rel="noopener noreferrer"
+            title="Download free do whatever you want high-resolution photos from Riccardo Oliva">
             Riccardo Oliva</a>
         </figcaption>
       </figure>
 
       <figure class="sm-col sm-col-6 lg-col-4 p2 m0">
         <img src="img/min/lattice-dome-800.jpg" alt="Photo by Clem Onojeghuo" class="image"
-             sizes="(min-width: 64em) 320px, (max-width: 40em) 100vw, 50vw"
-             srcset="img/min/lattice-dome-400.jpg 400w, img/min/lattice-dome-800.jpg 800w"/>
+          sizes="(min-width: 64em) 320px, (max-width: 40em) 100vw, 50vw"
+          srcset="img/min/lattice-dome-400.jpg 400w, img/min/lattice-dome-800.jpg 800w"/>
         <figcaption class="overlay center bold">
           <h6>Photo by</h6>
           <a class="text-decoration-none"
-             href="http://unsplash.com/@clemono2?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
-             target="_blank" rel="noopener noreferrer"
-             title="Download free do whatever you want high-resolution photos from Clem Onojeghuo">
+            href="http://unsplash.com/@clemono2?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+            target="_blank" rel="noopener noreferrer"
+            title="Download free do whatever you want high-resolution photos from Clem Onojeghuo">
             Clem Onojeghuo</a>
         </figcaption>
       </figure>
 
       <figure class="sm-col sm-col-6 lg-col-4 p2 m0">
         <img src="img/min/lighter-800.jpg" alt="Photo by Siyan Ren" class="image"
-             sizes="(min-width: 64em) 320px, (max-width: 40em) 100vw, 50vw"
-             srcset="img/min/lighter-400.jpg 400w, img/min/lighter-800.jpg 800w"/>
+          sizes="(min-width: 64em) 320px, (max-width: 40em) 100vw, 50vw"
+          srcset="img/min/lighter-400.jpg 400w, img/min/lighter-800.jpg 800w"/>
         <figcaption class="overlay center bold">
           <h6>Photo by</h6>
           <a class="text-decoration-none"
-             href="http://unsplash.com/@ramblere?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
-             target="_blank" rel="noopener noreferrer"
-             title="Download free do whatever you want high-resolution photos from Siyan Ren">
+            href="http://unsplash.com/@ramblere?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+            target="_blank" rel="noopener noreferrer"
+            title="Download free do whatever you want high-resolution photos from Siyan Ren">
             Siyan Ren</a>
         </figcaption>
       </figure>
 
       <figure class="sm-col sm-col-6 lg-col-4 p2 m0">
         <img src="img/min/building-800.jpg" alt="Photo by Redd Angelo" class="image"
-             sizes="(min-width: 64em) 320px, (max-width: 40em) 100vw, 50vw"
-             srcset="img/min/building-400.jpg 400w, img/min/building-800.jpg 800w"/>
+          sizes="(min-width: 64em) 320px, (max-width: 40em) 100vw, 50vw"
+          srcset="img/min/building-400.jpg 400w, img/min/building-800.jpg 800w"/>
         <figcaption class="overlay center bold">
           <h6>Photo by</h6>
           <a class="text-decoration-none"
-             href="http://unsplash.com/@reddangelo16?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
-             target="_blank" rel="noopener noreferrer"
-             title="Download free do whatever you want high-resolution photos from Redd Angelo">
+            href="http://unsplash.com/@reddangelo16?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge"
+            target="_blank" rel="noopener noreferrer"
+            title="Download free do whatever you want high-resolution photos from Redd Angelo">
             Redd Angelo</a>
         </figcaption>
       </figure>
 
     </div>
+    <p class="h6 center">Images courtesy <a href="https://www.facebook.com/kevin.lazich" rel="noopener noreferrer"
+      title="Unsplash.com">Unsplash.com</a></p>
   </section>
 
   <!--BLOG-->
@@ -347,10 +363,10 @@
 
 
 <footer class="border-top">
-  <div class="max-width-4 p2 mx-auto">
-    <p class="h6">Images courtesy <a href="https://www.facebook.com/kevin.lazich" rel="noopener noreferrer"
-                                     title="Unsplash.com">Unsplash.com</a></p>
-    <p class="h6">2017 KEVIN LAZICH dev@kevinlazich.com</p>
+  <div class="max-width-4 p2 mx-auto center">
+    <p class="h6">A huge thank you to my Mom and Dad. Love you both.</p>
+    <i class="icon-code" aria-hidden="true"></i>
+    <p class="h6">dev@kevinlazich.com</p>
   </div>
 </footer>
 
@@ -358,10 +374,10 @@
 <script>
   WebFont.load({
     google: {
-      families: ['Roboto Mono:400,700', 'Inconsolata:400,700'],
+      families: [ 'Roboto Mono:400,700', 'Inconsolata:400,700' ],
     },
     custom: {
-      families: ['fontello'],
+      families: [ 'fontello' ],
     },
   })
 </script>
