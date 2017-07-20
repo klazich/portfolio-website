@@ -70,9 +70,7 @@ gulp.task('js', [ 'clean' ], function() {
  */
 gulp.task('html', [ 'clean' ], function() {
   return gulp.src('src/index.html')
-    .pipe(sourcemap.init())
     .pipe(htmlmin(op.htmlmin))
-    .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('www'))
 })
 
@@ -124,6 +122,6 @@ gulp.task('watch', function() {})
  */
 gulp.task('default', [ 'clean', 'minify', 'js', 'images', 'fonts' ],
   function() {
-    return gulp.src([ 'src/CNAME', 'src/manifest.json' ])
+    return gulp.src([ 'src/manifest.json' ])
       .pipe(gulp.dest('www/'))
   })
