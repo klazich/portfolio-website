@@ -3,22 +3,22 @@
   "name": "Kevin Lazich's Web Development Portfolio",
   "icons": [
     {
-      "src": "img/kl-icon-48",
+      "src": "img/kl-icon/kl-icon-48",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "img/kl-icon-96.png",
+      "src": "img/kl-icon/kl-icon-96.png",
       "type": "image/png",
       "sizes": "96x96"
     },
     {
-      "src": "img/kl-icon-192.png",
+      "src": "img/kl-icon/kl-icon-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "img/kl-icon-512.png",
+      "src": "img/kl-icon/kl-icon-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
