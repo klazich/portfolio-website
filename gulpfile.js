@@ -3,6 +3,7 @@ let postcss = require('gulp-postcss')
 let rename = require('gulp-rename')
 let sourcemap = require('gulp-sourcemaps')
 let validator = require('gulp-html')
+let htmlmin = require('gulp-htmlmin')
 let stylefmt = require('gulp-stylefmt')
 let del = require('del')
 
@@ -12,6 +13,12 @@ let op = {
   },
   cssnano: {
     autoprefixer: false,
+  },
+  htmlmin: {
+    collapseWhitespace: true,
+    minifyURLs        : true,
+    sortClassName     : true,
+    sortAttributes    : true,
   },
 }
 
@@ -62,7 +69,11 @@ gulp.task('js', [ 'clean' ], function() {
  * HTML tasks
  */
 gulp.task('html', [ 'clean' ], function() {
-  return gulp.src('src/index.html').pipe(gulp.dest('www'))
+  return gulp.src('src/index.html')
+    .pipe(sourcemap.init())
+    .pipe(htmlmin(op.htmlmin))
+    .pipe(sourcemap.write('.'))
+    .pipe(gulp.dest('www'))
 })
 
 gulp.task('html:validate', [ 'html' ], function() {
