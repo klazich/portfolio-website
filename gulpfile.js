@@ -16,9 +16,6 @@ let op = {
   },
   htmlmin: {
     collapseWhitespace: true,
-    minifyURLs        : true,
-    sortClassName     : true,
-    sortAttributes    : true,
   },
 }
 
@@ -70,7 +67,7 @@ gulp.task('js', [ 'clean' ], function() {
  */
 gulp.task('html', [ 'clean' ], function() {
   return gulp.src('src/index.html')
-    .pipe(htmlmin(op.htmlmin))
+    //.pipe(htmlmin(op.htmlmin))
     .pipe(gulp.dest('www'))
 })
 
