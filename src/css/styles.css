@@ -12,12 +12,12 @@ header {
     filter: drop-shadow(0 2px 4px);
 }
 
-article ul li {
+article ul.tag li {
     transition: 0.5s;
     cursor: default;
     background-color: white;
 }
-article ul li:hover {
+article ul.tag li:hover {
     transform: scale(1.5);
 }
 
@@ -35,13 +35,11 @@ article ul li:hover {
     height: 3em;
 }
 
-a span,
-a {
+a{
     transition: 0.5s ease;
 }
 
-a:hover,
-a:hover span{
+a:hover{
     color: grey;
 }
 

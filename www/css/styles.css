@@ -26,6 +26,7 @@ a {
 h1,
 h2,
 h3,
+h4,
 h5,
 h6 {
   font-weight: 600;
@@ -49,6 +50,11 @@ h3 {
   font-size: 1.25rem;
 }
 
+h4 {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
 h5 {
   font-size: 14px;
   font-size: .875rem;
@@ -60,17 +66,9 @@ h6 {
 }
 
 p,
-ul,
-blockquote {
+ul {
   margin-top: 1em;
   margin-bottom: 1em;
-}
-
-blockquote {
-  font-size: 20px;
-  font-size: 1.25rem;
-  font-style: italic;
-  margin-left: 0;
 }
 
 .h2 {
@@ -86,11 +84,6 @@ blockquote {
 .h4 {
   font-size: 16px;
   font-size: 1rem;
-}
-
-.h5 {
-  font-size: 14px;
-  font-size: .875rem;
 }
 
 .h6 {
@@ -329,13 +322,13 @@ header {
   filter: drop-shadow(0 2px 4px);
 }
 
-article ul li {
+article ul.tag li {
   transition: 0.5s;
   cursor: default;
   background-color: white;
 }
 
-article ul li:hover {
+article ul.tag li:hover {
   -webkit-transform: scale(1.5);
   transform: scale(1.5);
 }
@@ -354,13 +347,11 @@ article ul li:hover {
   height: 3em;
 }
 
-a span,
 a {
   transition: 0.5s ease;
 }
 
-a:hover,
-a:hover span {
+a:hover {
   color: grey;
 }
 
