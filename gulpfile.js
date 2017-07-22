@@ -7,80 +7,83 @@ let htmlmin = require('gulp-htmlmin')
 let stylefmt = require('gulp-stylefmt')
 let del = require('del')
 
+// pkg and plugin options
 let op = {
-  uncss  : {
-    html: [ 'www/index.html' ],
+  uncss: {
+    html: ['www/index.html']
   },
   cssnano: {
-    autoprefixer: false,
+    autoprefixer: false
   },
   htmlmin: {
-    collapseWhitespace: true,
+    collapseWhitespace: true
   },
+  import: {
+    plugins: [require('stylelint')]
+  },
+  reporter: {
+    clearReportedMessages: true
+  }
 }
 
 /**
- * Clean tasks
+ * Cleaning tasks
  */
-gulp.task('clean:img', function() {
-  return del([ 'www/img/**/*' ])
-})
-
-gulp.task('clean:html', function() {
-  return del([ 'www/*.html' ])
-})
-
-gulp.task('clean:css', function() {
-  return del([ 'www/css/*.css', 'www/css/*.map' ])
-})
 
 gulp.task('clean', function() {
-  return del([ 'www/**' ])
+  return del(['www/**'])
 })
 
 /**
  * Font tasks
  */
-gulp.task('fonts', [ 'clean' ], function() {
+
+gulp.task('fonts', ['clean'], function() {
   return gulp.src('src/font/**/*').pipe(gulp.dest('www/font'))
-})
-
-/**
- * Image tasks
- */
-gulp.task('images', [ 'clean' ], function() {
-  return gulp.src([
-    'src/img/**/*',
-    '!src/img/org/**' ]).pipe(gulp.dest('www/img'))
-})
-
-/**
- * Javascript tasks
- */
-gulp.task('js', [ 'clean' ], function() {
-  return gulp.src('src/js/*.js')
-    .pipe(gulp.dest('www/js'))
 })
 
 /**
  * HTML tasks
  */
-gulp.task('html', [ 'clean' ], function() {
-  return gulp.src('src/index.html')
-    //.pipe(htmlmin(op.htmlmin))
-    .pipe(gulp.dest('www'))
+
+gulp.task('html', ['clean'], function() {
+  return (gulp
+      .src('src/index.html')
+      //.pipe(htmlmin(op.htmlmin))
+      .pipe(gulp.dest('www')) )
 })
 
-gulp.task('html:validate', [ 'html' ], function() {
+gulp.task('html:validate', ['html'], function() {
   return gulp.src('www/index.html').pipe(validator({ verbose: true }))
+})
+
+/**
+ * Image tasks
+ */
+
+gulp.task('img', ['clean'], function() {
+  return gulp
+    .src(['src/img/**/*', '!src/img/org/**'])
+    .pipe(gulp.dest('www/img'))
+})
+
+/**
+ * Javascript tasks
+ */
+
+gulp.task('js', ['clean'], function() {
+  return gulp.src('src/js/*.js').pipe(gulp.dest('www/js'))
 })
 
 /**
  * CSS tasks
  */
-gulp.task('css', [ 'clean', 'html' ], function() {
+
+// PostCSS
+gulp.task('css:postcss', ['clean', 'html'], function() {
   let processors = [
     require('postcss-import'),
+    // require('stylelint'),
     require('postcss-url'),
     require('postcss-discard-comments'),
     require('postcss-uncss')(op.uncss),
@@ -88,37 +91,35 @@ gulp.task('css', [ 'clean', 'html' ], function() {
     require('postcss-custom-media'),
     require('css-mqpacker'),
     require('postcss-cssnext'),
-    require('postcss-reporter'),
+    require('postcss-reporter')(op.reporter)
   ]
 
-  return gulp.src('src/css/styles.css')
+  return gulp
+    .src('src/css/styles.css')
     .pipe(postcss(processors))
     .pipe(stylefmt())
     .pipe(gulp.dest('www/css'))
 })
 
-/**
- * CSS minification tasks
- */
-gulp.task('minify', [ 'clean', 'css' ], function() {
-  return gulp.src('www/css/styles.css')
+// CSS minification task
+gulp.task('css:minify', ['clean', 'css:postcss'], function() {
+  return gulp
+    .src('www/css/styles.css')
     .pipe(sourcemap.init())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(postcss([ require('cssnano')(op.cssnano) ]))
+    .pipe(postcss([require('cssnano')(op.cssnano)]))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('www/css'))
 })
 
 /**
- * Watch task
- */
-gulp.task('watch', function() {})
-
-/**
  * Default task
  */
-gulp.task('default', [ 'clean', 'minify', 'js', 'images', 'fonts' ],
+
+gulp.task(
+  'default',
+  ['clean', 'css:postcss', 'css:minify', 'html', 'js', 'img', 'fonts'],
   function() {
-    return gulp.src([ 'src/manifest.json' ])
-      .pipe(gulp.dest('www/'))
-  })
+    return gulp.src(['src/manifest.json']).pipe(gulp.dest('www/'))
+  }
+)
