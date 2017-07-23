@@ -12,13 +12,8 @@ header {
     filter: drop-shadow(0 2px 4px);
 }
 
-article ul.tag li {
-    transition: 0.5s;
-    cursor: default;
-    background-color: white;
-}
-article ul.tag li:hover {
-    transform: scale(1.5);
+header a:hover {
+    color: whitesmoke;
 }
 
 .header-content * {
@@ -26,25 +21,70 @@ article ul.tag li:hover {
     line-height: 0.9;
 }
 
-.caps-r {
-    text-transform: uppercase;
-}
-
-.logo {
+svg {
     fill: currentColor;
     height: 3em;
 }
 
-a{
+a {
     transition: 0.5s ease;
 }
 
-a:hover{
+a:hover {
     color: grey;
 }
 
-header a:hover {
-    color: whitesmoke;
+#images a,
+h1,
+h2,
+h3 {
+    text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
+}
+
+ul.tag li {
+    transition: 0.5s;
+    cursor: default;
+    background-color: white;
+}
+
+ul.tag li:hover {
+    transform: scale(1.25);
+}
+
+.caps-r {
+    text-transform: uppercase;
+}
+
+/* Nav link hover text */
+
+.gh:hover:after {
+    content: " GitHub ";
+    font-weight: bolder;
+    font-size: smaller;
+}
+
+.gh:hover:before {
+    content: none;
+}
+
+.tw:hover:after {
+    content: " Twitter ";
+    font-weight: bolder;
+    font-size: smaller;
+}
+
+.tw:hover:before {
+    content: none;
+}
+
+.fb:hover:after {
+    content: " Facebook ";
+    font-weight: bolder;
+    font-size: smaller;
+}
+
+.fb:hover:before {
+    content: none;
 }
 
 /* Image overlay code */
@@ -113,34 +153,3 @@ figure:hover .overlay {
     }
 
 }
-
-/* Custom media queries */
-/*
-@custom-media --breakpoint-sm (min-width: 40em);
-@custom-media --breakpoint-md (min-width: 52em);
-@custom-media --breakpoint-lg (min-width: 64em);
-*/
-
-/* Custom properties */
-/*
-:root {
-  --h1: 2rem;
-  --h2: 1.5rem;
-  --h3: 1.25rem;
-  --h4: 1rem;
-  --h5: .875rem;
-  --h6: .75rem;
-
-  --bold-font-weight: bold;
-
-  --space-1: .5rem;
-  --space-2: 1rem;
-  --space-3: 2rem;
-  --space-4: 4rem;
-
-  --border-width: 1px;
-  --border-radius: 3px;
-
-  --old-yellow: #ffe23b;
-}
-*/
