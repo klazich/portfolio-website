@@ -1,11 +1,13 @@
-let gulp = require('gulp')
-let postcss = require('gulp-postcss')
-let rename = require('gulp-rename')
-let sourcemap = require('gulp-sourcemaps')
-let validator = require('gulp-html')
-let htmlmin = require('gulp-htmlmin')
-let stylefmt = require('gulp-stylefmt')
-let del = require('del')
+const gulp = require('gulp')
+const postcss = require('gulp-postcss')
+const rename = require('gulp-rename')
+const sourcemap = require('gulp-sourcemaps')
+const validator = require('gulp-html')
+const htmlmin = require('gulp-htmlmin')
+const stylefmt = require('gulp-stylefmt')
+const del = require('del')
+const lighthouse = require('lighthouse')
+const firebase = require('firebase-tools')
 
 // pkg and plugin options
 let op = {
