@@ -6,8 +6,8 @@ const validator = require('gulp-html')
 const htmlmin = require('gulp-htmlmin')
 const stylefmt = require('gulp-stylefmt')
 const del = require('del')
-const lighthouse = require('lighthouse')
-const firebase = require('firebase-tools')
+//const lighthouse = require('lighthouse')
+//const firebase = require('firebase-tools')
 
 // pkg and plugin options
 let op = {
@@ -19,9 +19,6 @@ let op = {
   },
   htmlmin: {
     collapseWhitespace: true
-  },
-  import: {
-    plugins: [require('stylelint')]
   },
   reporter: {
     clearReportedMessages: true
@@ -85,7 +82,6 @@ gulp.task('js', ['clean'], function() {
 gulp.task('css:postcss', ['clean', 'html'], function() {
   let processors = [
     require('postcss-import'),
-    // require('stylelint'),
     require('postcss-url'),
     require('postcss-discard-comments'),
     require('postcss-uncss')(op.uncss),

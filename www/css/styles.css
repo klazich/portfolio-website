@@ -25,7 +25,6 @@ a {
 
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {
@@ -43,11 +42,6 @@ h1 {
 h2 {
   font-size: 24px;
   font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 20px;
-  font-size: 1.25rem;
 }
 
 h4 {
@@ -79,11 +73,6 @@ ul {
 .h3 {
   font-size: 20px;
   font-size: 1.25rem;
-}
-
-.h4 {
-  font-size: 16px;
-  font-size: 1rem;
 }
 
 .h6 {
@@ -246,14 +235,6 @@ ul {
   border-bottom-width: 1px;
 }
 
-.hide {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-}
-
 .h00 {
   font-size: 64px;
   font-size: 4rem;
@@ -347,8 +328,7 @@ a:hover {
 
 #images a,
 h1,
-h2,
-h3 {
+h2 {
   text-shadow: 1px 1px 1px rgba(127, 127, 127, .3);
 }
 
@@ -437,16 +417,8 @@ figure:hover .overlay {
     box-sizing: border-box;
   }
 
-  .sm-col-4 {
-    width: 33.33333%;
-  }
-
   .sm-col-6 {
     width: 50%;
-  }
-
-  .sm-col-8 {
-    width: 66.66667%;
   }
 
   .sm-col-12 {
@@ -484,10 +456,6 @@ figure:hover .overlay {
     font-size: 1.5rem;
   }
 
-  .sm-h3 {
-    font-size: 1.25rem;
-  }
-
   .sm-header-content {
     margin-top: 1em;
   }
@@ -498,24 +466,6 @@ figure:hover .overlay {
   }
 }
 
-@media (min-width: 52em) {
-  .md-col-3 {
-    width: 25%;
-  }
-
-  .md-col-9 {
-    width: 75%;
-  }
-
-  .h00-responsive {
-    font-size: 8vw;
-  }
-
-  .md-h2 {
-    font-size: 1.5rem;
-  }
-}
-
 @media (min-width: 64em) {
   .lg-col-4 {
     width: 33.33333%;
@@ -523,6 +473,16 @@ figure:hover .overlay {
 
   header {
     background: url("../img/min/bg-1900.jpg");
+  }
+}
+
+@media (min-width: 52em) {
+  .h00-responsive {
+    font-size: 8vw;
+  }
+
+  .md-h2 {
+    font-size: 1.5rem;
   }
 }
 
