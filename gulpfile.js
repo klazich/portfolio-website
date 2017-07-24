@@ -5,12 +5,19 @@ const sourcemap = require('gulp-sourcemaps')
 const validator = require('gulp-html')
 const htmlmin = require('gulp-htmlmin')
 const stylefmt = require('gulp-stylefmt')
+const uglify = require('gulp-uglify')
 const del = require('del')
 
 // pkg and plugin options
 let op = {
   uncss: {
-    html: ['dist/index.html']
+    html: ['dist/index.html'],
+    ignore: [
+      '.blur-up',
+      '.blur-up.lazyloaded',
+      '.fade-box .lazyload',
+      '.fade-box .lazyloading',
+      '.fade-box img.lazyloaded',]
   },
   cssnano: {
     autoprefixer: false
@@ -24,7 +31,7 @@ let op = {
  * Cleaning tasks
  */
 
-gulp.task('clean', function() {
+gulp.task('clean', function () {
   return del(['dist/**'])
 })
 
@@ -32,7 +39,7 @@ gulp.task('clean', function() {
  * Font tasks
  */
 
-gulp.task('fonts', ['clean'], function() {
+gulp.task('fonts', ['clean'], function () {
   return gulp.src('src/font/**/*').pipe(gulp.dest('dist/font'))
 })
 
@@ -40,19 +47,19 @@ gulp.task('fonts', ['clean'], function() {
  * HTML tasks
  */
 
-gulp.task('html', ['clean'], function() {
+gulp.task('html', ['clean'], function () {
   return gulp.src('src/index.html').pipe(htmlmin()).pipe(gulp.dest('dist'))
 })
 
-gulp.task('html:validate', ['html'], function() {
-  return gulp.src('dist/index.html').pipe(validator({ verbose: true }))
+gulp.task('html:validate', ['html'], function () {
+  return gulp.src('dist/index.html').pipe(validator({verbose: true}))
 })
 
 /**
  * Image tasks
  */
 
-gulp.task('img', ['clean'], function() {
+gulp.task('img', ['clean'], function () {
   return gulp
     .src(['src/img/**/*', '!src/img/org/**'])
     .pipe(gulp.dest('dist/img'))
@@ -62,8 +69,19 @@ gulp.task('img', ['clean'], function() {
  * Javascript tasks
  */
 
-gulp.task('js', ['clean'], function() {
-  return gulp.src('src/js/*.js').pipe(gulp.dest('dist/js'))
+gulp.task('js', ['clean'], function () {
+  return gulp.src('src/js/*.js')
+    .pipe(gulp.dest('dist/js'))
+})
+
+// minify js
+gulp.task('js:minify', ['js', 'clean'], function () {
+  return gulp.src('dist/js/*.js')
+    .pipe(sourcemap.init())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(sourcemap.write('.'))
+    .pipe(gulp.dest('dist/js'))
 })
 
 /**
@@ -71,7 +89,7 @@ gulp.task('js', ['clean'], function() {
  */
 
 // PostCSS
-gulp.task('css:postcss', ['clean', 'html'], function() {
+gulp.task('css:postcss', ['clean', 'html'], function () {
   let processors = [
     require('postcss-import'),
     require('postcss-url'),
@@ -92,11 +110,11 @@ gulp.task('css:postcss', ['clean', 'html'], function() {
 })
 
 // CSS minification task
-gulp.task('css:minify', ['clean', 'css:postcss'], function() {
+gulp.task('css:minify', ['clean', 'css:postcss'], function () {
   return gulp
     .src('dist/css/styles.css')
     .pipe(sourcemap.init())
-    .pipe(rename({ suffix: '.min' }))
+    .pipe(rename({suffix: '.min'}))
     .pipe(postcss([require('cssnano')(op.cssnano)]))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('dist/css'))
@@ -108,8 +126,8 @@ gulp.task('css:minify', ['clean', 'css:postcss'], function() {
 
 gulp.task(
   'default',
-  ['clean', 'css:postcss', 'css:minify', 'html', 'js', 'img', 'fonts'],
-  function() {
+  ['clean', 'css:postcss', 'css:minify', 'html', 'js', 'js:minify', 'img', 'fonts'],
+  function () {
     return gulp.src(['src/manifest.json']).pipe(gulp.dest('dist/'))
   }
 )
