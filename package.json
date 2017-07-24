@@ -38,5 +38,8 @@
     "postcss-uncss": "^0.14.0",
     "postcss-url": "^7.0.0",
     "uncss": "^0.14.1"
+  },
+  "scripts": {
+    "lighthouse": "lighthouse https://kevinlazich.com/ --output html --output-path ./lighthouse-report.html"
   }
 }
