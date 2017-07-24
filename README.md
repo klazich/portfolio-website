@@ -9,7 +9,7 @@ is hosted by [Google Firebase](https://firebase.google.com/) and can be visited 
 [KevinLazich.com](https://kevinlazich.com).
 
 A [lighthouse](https://developers.google.com/web/tools/lighthouse/) report can be
-found at [/lighthouse-report.html](./lighthouse-report.html).
+found at [here](https://googlechrome.github.io/lighthouse/viewer/?gist=e7711fbe1e94fa670d4823b741cd0a4f).
 
 A [W3C's Unified Validator](https://validator.w3.org/unicorn/) report (for HTML and CSS) can be 
 viewed [here](https://validator.w3.org/unicorn/check?ucn_uri=https%3A%2F%2Fkevinlazich.com&ucn_task=conformance#).
@@ -21,10 +21,12 @@ viewed [here](https://validator.w3.org/unicorn/check?ucn_uri=https%3A%2F%2Fkevin
 
 ## Gulp tasks
 
+> [gulpfile.js](gulpfile.js)
+
 `src/` = Source directory  
 `dist/` = Destination directory
 
-####`gulp` (default)
+#### `gulp` (default)
 - Runs `clean`, `css:postcss`, `css:minify`, `html`, `js`, `img`, `fonts` and
   copies manifest.json to `dist/`.
 #### `gulp clean`
