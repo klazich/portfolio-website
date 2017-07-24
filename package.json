@@ -1,7 +1,7 @@
 {
   "name": "portfolio-website-bassplate",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.html",
   "repository": "git@github.com:klazich/portfolio-website.git",
   "description": "portfolio, kevinlazich.com",
   "author": "Kevin <dev@kevinlazich.com>",
@@ -12,8 +12,7 @@
     "basscss-basic": "^1.0.0",
     "basscss-responsive-border": "^1.1.1",
     "basscss-utility-headings": "^0.1.0",
-    "gulp-html": "^0.4.7",
-    "responsively-lazy": "^2.0.2"
+    "gulp-html": "^0.4.7"
   },
   "devDependencies": {
     "css-mqpacker": "^6.0.1",

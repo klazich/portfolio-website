@@ -6087,10 +6087,6 @@ resolve@^1.1.6, resolve@^1.1.7:
   dependencies:
     path-parse "^1.0.5"
 
-responsively-lazy@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/responsively-lazy/-/responsively-lazy-2.0.2.tgz#9a9967e2e3daf059a8d5295d0bfbf8e8f6a52782"
-
 restore-cursor@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/restore-cursor/-/restore-cursor-1.0.1.tgz#34661f46886327fed2991479152252df92daa541"

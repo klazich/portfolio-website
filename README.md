@@ -1,24 +1,31 @@
 # portfolio-website
-Kevin Lazich Web Development Portfolio
+[KevinLazich.com](https://kevinlazich.com) | Web Development Portfolio
 
 
-## About
+---
 
-The website is built from the `src/` directory, to `dist/`. The `dist` directory 
-is hosted by [Google Firebase](https://firebase.google.com/) and can be visited at
-[KevinLazich.com](https://kevinlazich.com).
+The website is built from the development directory `src/`, to `dist/` the production directory. The `dist` directory 
+is hosted by [Google Firebase](https://firebase.google.com/) and can be visited at [KevinLazich.com](https://kevinlazich.com).
 
-A [lighthouse](https://developers.google.com/web/tools/lighthouse/) report can be
-found at [here](https://googlechrome.github.io/lighthouse/viewer/?gist=e7711fbe1e94fa670d4823b741cd0a4f).
+A [lighthouse](https://developers.google.com/web/tools/lighthouse/) report can be found at 
+[here](https://googlechrome.github.io/lighthouse/viewer/?gist=eda380f51204891754f21cddb3fc330f).
 
 A [W3C's Unified Validator](https://validator.w3.org/unicorn/) report (for HTML and CSS) can be 
 viewed [here](https://validator.w3.org/unicorn/check?ucn_uri=https%3A%2F%2Fkevinlazich.com&ucn_task=conformance#).
 
 ## To Udacity Project Reviewer
 
+The HTML is passing W3C validation with no errors. But the CSS validation keeps yelling at me about this
+[one errors](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkevinlazich.com&profile=css3&usermedium=all&warning=1&vextwarning=&lang=en):
 
+#### `svg` : Property `fill` doesn't exist
 
-
+The css code is [here](https://github.com/klazich/portfolio-website/blob/master/src/css/styles.css#L25) and involves the
+svg logo in the top left corner of the web page. I got the idea from
+[here](https://css-tricks.com/cascading-svg-fill-color/) when I was looking for a way to to make the SVG logo the 
+same color as the rest of the header. I'm not sure why this is an error, I guess `fill` is not not technically 
+a CSS property but SVG?
+ 
 ## Gulp tasks
 
 > [gulpfile.js](gulpfile.js)

@@ -270,8 +270,6 @@ ul {
   width: 1em;
   margin-right: .2em;
   text-align: center;
-  -webkit-font-feature-settings: normal;
-  font-feature-settings: normal;
   font-variant: normal;
   text-transform: none;
   line-height: 1em;
