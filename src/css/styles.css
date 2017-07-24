@@ -89,17 +89,8 @@ ul.tag li:hover {
 
 /* Image overlay code */
 
-figure {
+.fade-box {
     position: relative;
-}
-
-.image {
-    opacity: 1;
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: 0.5s ease;
-    backface-visibility: hidden;
 }
 
 .overlay {
@@ -111,11 +102,36 @@ figure {
     transform: translate(-50%, -50%);
 }
 
-figure:hover .image {
+.blur-up {
+    filter: blur(5px);
+    transition: all 0.5s ease;
+}
+
+.blur-up.lazyloaded {
+    filter: blur(0);
+    transition: 0.5s ease;
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    backface-visibility: hidden;
+}
+
+.fade-box .lazyload,
+.fade-box .lazyloading {
+    opacity: 0;
+    transition: opacity 400ms;
+}
+
+.fade-box img.lazyloaded {
+    opacity: 1;
+}
+
+.fade-box:hover img.lazyloaded {
     opacity: 0.3;
 }
 
-figure:hover .overlay {
+.fade-box:hover figcaption.overlay {
     opacity: 1;
     transform: translate(-50%, -50%);
 }
@@ -154,39 +170,5 @@ figure:hover .overlay {
 
 }
 
-a.progressive {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    outline: none;
-}
 
-a.progressive:not(.replace) {
-    cursor: default;
-}
 
-a.progressive img {
-    display: block;
-    width: 100%;
-    max-width: none;
-    height: auto;
-    border: 0 none;
-}
-
-a.progressive img.preview {
-    filter: blur(2vw);
-    transform: scale(1.05);
-}
-
-a.progressive img.reveal {
-    position: absolute;
-    left: 0;
-    top: 0;
-    will-change: transform, opacity;
-    animation: reveal 1s ease-out;
-}
-
-@keyframes reveal {
-    0% { transform: scale(1.05); opacity: 0 }
-    100% { transform: scale(1); opacity: 1; }
-}
