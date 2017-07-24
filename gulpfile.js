@@ -6,19 +6,14 @@ const validator = require('gulp-html')
 const htmlmin = require('gulp-htmlmin')
 const stylefmt = require('gulp-stylefmt')
 const del = require('del')
-//const lighthouse = require('lighthouse')
-//const firebase = require('firebase-tools')
 
 // pkg and plugin options
 let op = {
   uncss: {
-    html: ['www/index.html']
+    html: ['dist/index.html']
   },
   cssnano: {
     autoprefixer: false
-  },
-  htmlmin: {
-    collapseWhitespace: true
   },
   reporter: {
     clearReportedMessages: true
@@ -30,7 +25,7 @@ let op = {
  */
 
 gulp.task('clean', function() {
-  return del(['www/**'])
+  return del(['dist/**'])
 })
 
 /**
@@ -38,7 +33,7 @@ gulp.task('clean', function() {
  */
 
 gulp.task('fonts', ['clean'], function() {
-  return gulp.src('src/font/**/*').pipe(gulp.dest('www/font'))
+  return gulp.src('src/font/**/*').pipe(gulp.dest('dist/font'))
 })
 
 /**
@@ -46,14 +41,11 @@ gulp.task('fonts', ['clean'], function() {
  */
 
 gulp.task('html', ['clean'], function() {
-  return (gulp
-      .src('src/index.html')
-      //.pipe(htmlmin(op.htmlmin))
-      .pipe(gulp.dest('www')) )
+  return gulp.src('src/index.html').pipe(htmlmin()).pipe(gulp.dest('dist'))
 })
 
 gulp.task('html:validate', ['html'], function() {
-  return gulp.src('www/index.html').pipe(validator({ verbose: true }))
+  return gulp.src('dist/index.html').pipe(validator({ verbose: true }))
 })
 
 /**
@@ -63,7 +55,7 @@ gulp.task('html:validate', ['html'], function() {
 gulp.task('img', ['clean'], function() {
   return gulp
     .src(['src/img/**/*', '!src/img/org/**'])
-    .pipe(gulp.dest('www/img'))
+    .pipe(gulp.dest('dist/img'))
 })
 
 /**
@@ -71,7 +63,7 @@ gulp.task('img', ['clean'], function() {
  */
 
 gulp.task('js', ['clean'], function() {
-  return gulp.src('src/js/*.js').pipe(gulp.dest('www/js'))
+  return gulp.src('src/js/*.js').pipe(gulp.dest('dist/js'))
 })
 
 /**
@@ -96,18 +88,18 @@ gulp.task('css:postcss', ['clean', 'html'], function() {
     .src('src/css/styles.css')
     .pipe(postcss(processors))
     .pipe(stylefmt())
-    .pipe(gulp.dest('www/css'))
+    .pipe(gulp.dest('dist/css'))
 })
 
 // CSS minification task
 gulp.task('css:minify', ['clean', 'css:postcss'], function() {
   return gulp
-    .src('www/css/styles.css')
+    .src('dist/css/styles.css')
     .pipe(sourcemap.init())
     .pipe(rename({ suffix: '.min' }))
     .pipe(postcss([require('cssnano')(op.cssnano)]))
     .pipe(sourcemap.write('.'))
-    .pipe(gulp.dest('www/css'))
+    .pipe(gulp.dest('dist/css'))
 })
 
 /**
@@ -118,6 +110,6 @@ gulp.task(
   'default',
   ['clean', 'css:postcss', 'css:minify', 'html', 'js', 'img', 'fonts'],
   function() {
-    return gulp.src(['src/manifest.json']).pipe(gulp.dest('www/'))
+    return gulp.src(['src/manifest.json']).pipe(gulp.dest('dist/'))
   }
 )
