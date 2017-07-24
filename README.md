@@ -10,9 +10,6 @@ is hosted by [Google Firebase](https://firebase.google.com/) and can be visited 
 A [lighthouse](https://developers.google.com/web/tools/lighthouse/) report can be found at 
 [here](https://googlechrome.github.io/lighthouse/viewer/?gist=eda380f51204891754f21cddb3fc330f).
 
-A [W3C's Unified Validator](https://validator.w3.org/unicorn/) report (for HTML and CSS) can be 
-viewed [here](https://validator.w3.org/unicorn/check?ucn_uri=https%3A%2F%2Fkevinlazich.com&ucn_task=conformance#).
-
 ## To Udacity Project Reviewer
 
 The HTML is passing W3C validation with no errors. But the CSS validation keeps yelling at me about this
